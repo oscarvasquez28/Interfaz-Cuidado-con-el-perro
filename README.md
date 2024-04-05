@@ -3,9 +3,6 @@
 
 Mejora en la interfaz de la página "Cuidado con el Perro", cumpliendo el principio KISS (Keep it simple).
 
-![Logo](https://www.elfinanciero.com.mx/resizer/501rxqRhiQSy2dyIeX0CKbL-0WE=/400x267/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/elfinanciero/6IZH7VO5DNEDDHLCOIHAINY3Q4.jpeg)
-
-
 
 
 ## Authors
