@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'MiFuente';
+    src: url('/FrontEnd/src/Fonts/opensans.woff2') format('woff2');
+    /* Puedes añadir otros formatos de fuente aquí para mayor compatibilidad */
+}
+
+.header-comp{
+    color: white;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 10px;
+    border-bottom: 0.5px solid white; */
+    background: transparent;
+    padding: 6px 0px 6px 0px;
+    font-family: 'MiFuente', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    line-height: 3.5em;
+    transition: background-color 0.3s ease;
+}
+
+.header-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 20px;
+    border-bottom: 0.5px solid white;
+}
+
+.header-nav div{
+    height: 64px;
+}
+
+.header-comp a{
+    text-decoration: none;
+    margin: 0px 12px 0px 0px;
+    padding: 4px 4px 2px 4px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo{
+    height: 5.5vh;
+}
+
+.header-center:hover{
+    cursor: pointer;
+}
+
+.header-right a:hover{
+    background: black;
+    cursor: pointer;
+}
+
+.header-left a:hover{
+    background: black;
+    cursor: pointer;
+}
+
+.header-comp i{
+    padding-right: 8px;
+    width: 20px;
+    height: 20px;
+}
+
+
+.header-comp.scrolled {
+    /* Estilos cuando el usuario hace scroll hacia abajo */
+    background: white; /* Cambiar el color de fondo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra para resaltar */
+  }
+
+  .header-comp.scrolled a{
+    color: black;
+  }
+
+  .header-comp.scrolled a:hover{
+    color: white;
+  }
+
+  .header-comp.scrolled img{
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+  }
+
+
+  @media screen and (max-width: 800px) {
+    .header-right {
+        display: none;
+    }
+
+    .header-left {
+        display: none;
+    }
+}

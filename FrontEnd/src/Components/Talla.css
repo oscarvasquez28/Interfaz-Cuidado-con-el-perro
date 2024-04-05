@@ -1,0 +1,11 @@
+.Dropdown-button-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Dropdown-button{
+    min-width: 108px;
+    width: 100%;
+    padding: 8px 12px 6px 12px;
+}
