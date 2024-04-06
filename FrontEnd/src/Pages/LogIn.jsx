@@ -7,11 +7,24 @@ import Footer from '../Components/Footer'
 
 function SignIn(){
   const [showPass, setShowPass] = useState(false)
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  // Actualiza las variables si se modifica el input
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+  
     return (
       <div>
+
         <header className='header'>
           <Header/>
         </header>
+        
         <div className='both-sides'> 
 
           <div className='left-side'>
@@ -21,34 +34,36 @@ function SignIn(){
                 <h2 className='right-side-subtitle'>
                   ENTRA A TU CUENTA
                 </h2>            
-              </div> 
-
-              <div className=''>
-                <input type="text" className='email-subscribe-si' placeholder='Email' />
               </div>
 
-              <div className=''>        
-                <div className='pass-input'>
-                  <input type={ showPass ? "text" : "password"}       className='email-subscribe-si' placeholder='Contraseña' />
+              <form action=""> {/* aqui empieza el forms-----------*/}
 
-                  <div className='pass-icon' onClick={() => setShowPass(!showPass)}>
+                <div className=''>
+                  <input type="text" className='email-subscribe-si' placeholder='Email' value={email} onChange={handleEmailChange}/>
+                </div>
+
+                <div className=''>        
+                  <div className='pass-input'>
+                    <input type={ showPass ? "text" : "password"}       className='email-subscribe-si' placeholder='Contraseña' value={password} 
+                    onChange={handlePasswordChange}/>
+
+                    <div className='pass-icon' onClick={() => setShowPass (!showPass)}>
                     {showPass ? <i class="bi bi-eye"></i> : <i class="bi bi-eye-slash"></i>}
-                  </div>
+                    </div>
 
-                </div>   
-                  
-              </div>  
+                  </div>   
+                </div>  
+
+                <div>
+                  <button className={ (password !== '' && email !== '') ? "btn-create-si" : "btn-unirse-si"} type='submit'>INICIAR SESIÓN</button>
+                </div> 
+              </form>                
 
               <div>
-                <button className='btn-unirse-si'>INICIAR SESIÓN</button>
-              </div>   
-
-              <div>
-              <p className='or-reset-pass'>¿OLVISASTE TU CONTRASEÑA?</p>
-            </div>
+                <p className='or-reset-pass'>¿OLVISASTE TU CONTRASEÑA?</p>
+              </div>
             
             </div>
-
           
           </div>
 
@@ -61,14 +76,12 @@ function SignIn(){
             <div>
               <button className='btn-create-si'>CREAR CUENTA</button>
             </div>
-
           </div>
-
         </div>
-        <Footer/>
-      </div>
-      
 
+        <Footer/>
+
+      </div>
 
     );
 }
