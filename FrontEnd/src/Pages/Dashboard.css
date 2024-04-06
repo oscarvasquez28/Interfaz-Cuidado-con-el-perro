@@ -12,6 +12,7 @@
      /* Opcional: Establece un ancho máximo para el contenedor principal */
     margin: 0 auto; /* Centra el contenedor horizontalmente */
     padding: 20px;
+    margin-top: 44px;
   }
 
   /* Post.css */
@@ -26,9 +27,15 @@
     text-align: center;
   } */
 
-  h3{
+  .Novedades{
     font-size: 7vh;
     font-weight:1000;
+  }
+
+  .subtitle{
+    font-size:3vh;
+    font-weight: 600;
+    margin-bottom: 12px;
   }
 
   /* .Post-img {

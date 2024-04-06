@@ -22,7 +22,8 @@ function Dashboard() {
         <Carousel/>
       </div>
       <div className='App-novedades'>
-        <h3>NOVEDADES</h3> 
+        <h3 className='subtitle'>LO MÁS PERRO</h3>
+        <h3 className='Novedades'>NOVEDADES</h3> 
         {/* hay que darle un estilo a esto */}
         <div className="posts-container">
           <Post imagen={PlayeraGris} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
