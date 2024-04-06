@@ -22,7 +22,7 @@ function Dashboard() {
         <Carousel/>
       </div>
       <div className='App-novedades'>
-        <h1>Novedades</h1> 
+        <h3>NOVEDADES</h3> 
         {/* hay que darle un estilo a esto */}
         <div className="posts-container">
           <Post imagen={PlayeraGris} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>

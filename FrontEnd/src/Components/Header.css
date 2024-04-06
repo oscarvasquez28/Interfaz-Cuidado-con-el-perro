@@ -51,6 +51,14 @@
     cursor: pointer;
 }
 
+.header-right a{
+    transition: background-color 0.3s ease;
+}
+
+.header-left a{
+    transition: background-color 0.3s ease;
+}
+
 .header-right a:hover{
     background: black;
     cursor: pointer;

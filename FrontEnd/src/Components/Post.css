@@ -1,31 +1,69 @@
 .Post {
-    flex-basis: calc(25% - 20px); /* Establece el ancho base del componente Post */
-    margin-bottom: 20px;
-    box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del tamaño */
-  }
+  flex-basis: calc(33%); /* Establece el ancho base del componente Post */
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del tamaño */
+}
   
-  .Post-container {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-  }
+.posts-container {
+  /* background-color: #f9f9f9; */
+  padding: 20px;
+   border-radius: 5px;
+  text-align:left;
+}
   
-  .Post-img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
+.Post-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
   
-  .posts-container {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los componentes Post se envuelvan en líneas adicionales si no caben en la misma fila */
-    justify-content: space-between; /* Distribuye los componentes Post de manera uniforme en el contenedor */
-  }
+.posts-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los componentes Post se envuelvan en líneas adicionales si no caben en la misma fila */
+  justify-content: space-between; /* Distribuye los componentes Post de manera uniforme en el contenedor */
+}
   
-  @media screen and (max-width: 768px) {
-    .Post {
-      flex-basis: calc(50% - 20px); /* Cambia el ancho del componente Post cuando la pantalla es más pequeña */
-    }
+.Precio-bold{
+  font-weight: bold;
+}
+
+.btn-inline{
+  display: flex;
+  justify-content: space-between; /* Espacio entre los botones */
+}
+
+/* .btn-inline div{
+  flex-basis: calc(49% );
+  text-align: right;
+  width: 100%;
+
+} */
+
+.btn-inline-right{
+  flex-basis: calc(49% );
+  /* text-align: right; */
+  width: 100%;
+}
+
+.btn-inline-left{
+  flex-basis: calc(49% );
+  /* text-align: right; */
+  width: 100%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .Post {
+    flex-basis: calc(50% - 20px); /* Cambia el ancho del componente Post cuando la pantalla es más pequeña */
   }
-  
+}
+
+@media screen and (max-width: 1152px) {
+  .btn-inline{
+    display: inline;
+    justify-content: space-between; /* Espacio entre los botones */
+  }
+
+}

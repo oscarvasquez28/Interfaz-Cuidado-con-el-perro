@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Talla.css'
 
-function App() {
-  const [botonSeleccionado, setBotonSeleccionado] = useState(null);
+function Talla() {
+  const [botonSeleccionado, setBotonSeleccionado] = useState("Talla");
 
   const handleClick = (valor) => {
     setBotonSeleccionado(valor);
@@ -13,13 +13,12 @@ function App() {
       <button className="Dropdown-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         <div className="Dropdown-button-center">
           <div className='Dropdown-button-talla'>
-            <span>Talla</span>
+            <span>{botonSeleccionado}</span>
           </div>
           <div className='Dropdown-button-icon'>
             <span><i className="bi bi-chevron-compact-down"></i></span>
           </div>
         </div>
- 
       </button>
       <ul className="dropdown-menu">
         <li><p className="dropdown-item"  onClick={() => handleClick("XCH - XS")}>XCH - XS</p></li>
@@ -28,10 +27,10 @@ function App() {
         <li><p className="dropdown-item"  onClick={() => handleClick("GD - L")}>GD - L</p></li>
         <li><p className="dropdown-item"  onClick={() => handleClick("XGD - XL")}>XGD - XL</p></li>
       </ul>
-
-      {/* <p>Botón seleccionado: {botonSeleccionado}</p> */}
+       {/* <p>Botón seleccionado: {botonSeleccionado}</p> */}
     </div>
   );
 }
 
-export default App;
+export default Talla;
+
