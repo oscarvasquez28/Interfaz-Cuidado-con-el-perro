@@ -9,8 +9,6 @@ function LogIn(){
 
       <div> 
         
-
-
         <div className='general'>
 
           <div className='title'>
