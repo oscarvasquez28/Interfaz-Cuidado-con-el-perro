@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './LogIn.css';
 import Header from '../Components/Header'
+import Footer from '../Components/Footer'
 
 // import bfooter from '../Images/Footer/background-footer.jpg'
 
@@ -80,6 +81,9 @@ function LogIn(){
             <p className='or-signin'>¿YA TIENES UNA CUENTA? INICIA SESIÓN</p>
           </div>
 
+        </div>
+        <div>
+          <Footer/>
         </div>
 
       </div>  
