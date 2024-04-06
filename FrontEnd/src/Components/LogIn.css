@@ -1,0 +1,138 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.general{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  margin: 3% 15%;
+}
+
+
+.title{
+  text-align: left;
+}
+
+
+.email {
+  position: relative;
+  margin: 11% 15%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.email-subscribe-li {
+  padding: 15px 10px;
+  border: solid;
+  font-size: 15px;
+  font-weight: bold;
+  outline: none;
+  border-width: 1px;
+  border-color: rgb(204, 204, 204);
+  margin: 8px 5px;
+}
+
+.eemail-subscribe-li {
+  padding: 15px 10px;
+  border: solid;
+  font-size: 15px;
+  font-weight: bold;
+  outline: none;
+  border-width: 1px;
+  border-color: rgb(204, 204, 204);
+  margin: 8px 5px;
+  width: 430px;
+}
+
+.email-subscribe-li::placeholder {
+  color: black;
+  font-weight: bold;
+}
+
+.eemail-subscribe-li::placeholder {
+  color: black;
+  font-weight: bold;
+}
+
+
+.email-subscribe-li:focus{
+  border-color: black;
+}
+
+.email-subscribe-li:hover{
+  border-color: black;
+}
+
+.eemail-subscribe-li:focus{
+  border-color: black;
+}
+
+.eemail-subscribe-li:hover{
+  border-color: black;
+}
+
+.pass-char{
+  font-size: 11px;
+}
+
+.want-suscribe{
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-unirse-li {
+  background-color: rgb(230, 230, 230);
+  border: none;
+  padding: 15px 10%;
+  color: rgb(153, 153, 153);
+  font-weight: bolder;
+  margin: 5px;
+}
+
+.pass-inputs{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.pass-input{
+  position: relative;
+}
+.pass-icon-li{
+  position: absolute;
+  top: 35%;
+  right: 10%;
+  cursor: pointer;
+}
+
+.or-signin{
+  color: rgb(0, 69, 255);
+  font-size: smaller;
+}
+
+
+
+
+@media (max-width: 800px) {
+  
+
+  .pass-icon-li{
+    position: absolute;
+    top: 35%;
+    right: 59%;
+    cursor: pointer;
+  }
+  .contenedor-footer {
+      width: 100%;
+      margin: 5px 0;
+      flex-basis: calc(25% - 20px); /* Utilizar el 100% del espacio en flex basis */
+  }
+}
