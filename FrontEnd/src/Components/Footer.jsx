@@ -33,7 +33,7 @@ function Footer(){
                 <p className='links'>© Cuidado con el Perro 2023. / Todos los Derechos Reservados</p>
             </div> 
 
-            <form action="">
+            <form>
                 <div className='contenedor-footer'>          
 
                 <div className='texts'>

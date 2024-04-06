@@ -16,6 +16,11 @@
   height: auto;
   margin-bottom: 10px;
   border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.Post-img:hover{
+  transform: scale(0.99);
 }
   
 .posts-container {

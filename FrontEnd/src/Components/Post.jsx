@@ -1,16 +1,30 @@
 import './Post.css'
-import React from 'react'
+import React, { useState } from 'react'
 import Talla from './Talla'
 import AddCarrito from './AddCarrito'
 
 
 const Post = (props) => {
-    const {imagen, articulo, precio, color, talla, } = props;
+    const { imagen, imagenHover, articulo, precio, color, talla } = props;
+    const [hovered, setHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setHovered(false);
+    };
 
     return (
         <div className="Post">
             <div className="Post-container">
-                <img src={imagen} alt="" className='Post-img' />
+                <img src={hovered ? imagenHover : imagen} // Cambia la imagen según el estado hovered
+                    alt=""
+                    className="Post-img"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                />
                 <p>Articulo: {articulo}</p>
                 <p className='Precio-bold'>Precio: ${precio}.00</p>
                 <p>Color: {color}</p>

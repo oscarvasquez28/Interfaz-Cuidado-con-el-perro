@@ -26,18 +26,18 @@ function Dashboard() {
         <h3 className='Novedades'>NOVEDADES</h3> 
         {/* hay que darle un estilo a esto */}
         <div className="posts-container">
-          <Post imagen={PlayeraGris} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
-          <Post imagen={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
-          <Post imagen={CuelloResort} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
-          <Post imagen={pokemon} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
-          <Post imagen={PlayeraGris} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
-          <Post imagen={PlayeraGris} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
-          <Post imagen={PlayeraGris} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
-          <Post imagen={PlayeraGris} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
-          <Post imagen={PlayeraGris} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
-          <Post imagen={PlayeraGris} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
-          <Post imagen={PlayeraGris} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
-          <Post imagen={PlayeraGris} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
+          <Post imagen={PlayeraGris} imagenHover={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
+          <Post imagen={acdc} imagenHover={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
+          <Post imagen={CuelloResort} imagenHover={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
+          <Post imagen={pokemon} imagenHover={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
+          <Post imagen={PlayeraGris} imagenHover={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
+          <Post imagen={PlayeraGris} imagenHover={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
+          <Post imagen={PlayeraGris} imagenHover={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
+          <Post imagen={PlayeraGris} imagenHover={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
+          <Post imagen={PlayeraGris} imagenHover={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
+          <Post imagen={PlayeraGris} imagenHover={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
+          <Post imagen={PlayeraGris} imagenHover={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
+          <Post imagen={PlayeraGris} imagenHover={acdc} articulo="Playera Rayas Gris Perro" precio={139.00} color="Grises"/>
           
         </div>
       </div>
