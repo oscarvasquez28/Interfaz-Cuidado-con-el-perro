@@ -120,6 +120,13 @@
     border-bottom: 0.5px solid black;
   }
 
+  .General.scrolled {
+    /* Estilos cuando el usuario hace scroll hacia abajo */
+    background: white; /* Cambiar el color de fondo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra para resaltar */
+    border-bottom: none;
+  }
+
   .header-comp.scrolled a{
     color: black;
   }

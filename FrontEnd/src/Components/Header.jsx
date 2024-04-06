@@ -31,8 +31,8 @@ const Header = () => {
       <div className={`header-comp ${scrollDown ? 'scrolled' : ''} ${location.pathname === '/' ? 'home-route' : 'General'}`}>
         <nav className='header-nav'>
             <div className='header-right'>
-                <Link to ="Home">MUJER</Link>
-                 <Link to ="Create">HOMBRE</Link>
+                <Link to ="/Home">MUJER</Link>
+                 <Link to ="/Create">HOMBRE</Link>
                  <Link to ="/">KIDS</Link>
                  <Link to ="/"><i className="bi bi-search"></i>BUSCAR</Link>
             </div>
@@ -40,8 +40,8 @@ const Header = () => {
                  <Link to ="/"> <img src={perro} className="logo" alt="logo" /></Link>
             </div>
              <div className='header-left'>
-                <Link to ="LogIn">INICIAR SESIÓN</Link>
-                 <Link to ="SignIn">FAVORITOS</Link>
+                <Link to ="/LogIn">INICIAR SESIÓN</Link>
+                 <Link to ="/SignIn">FAVORITOS</Link>
                  <Link to ="/">CARRITO</Link>
             </div>
          </nav>  

@@ -1,70 +1,90 @@
 import React, { useState } from 'react';
-import './SignIn.css';
+import './LogIn.css';
+import Header from '../Components/Header'
 
 // import bfooter from '../Images/Footer/background-footer.jpg'
 
-function SignIn(){
+function LogIn(){
   const [showPass, setShowPass] = useState(false)
     return (
 
-      <div className='both-sides'> 
-        
-        <div className='left-side'>
-          <div className='general'>
+      <div>
+        <header className='header'>
+          <Header/>
+        </header>
+        <div className='general'>
 
-            <div className='title'>
-              <h2>
-                ENTRA A TU CUENTA
-              </h2>            
-            </div> 
+          <div className='right-side-subtitle'>
+            <h2 className='right-side-subtitle-h2'>
+              CREA TU CUENTA
+            </h2>
+            <p>Ingresa tus datos para que seas parte de CCP</p>
+          </div> 
 
-            <div className=''>
-              <input type="text" className='email-subscribe-si' placeholder='Email' />
-            </div>
-
-            <div className=''>        
-              <div className='pass-input'>
-                <input type={ showPass ? "text" : "password"}       className='email-subscribe-si' placeholder='Contraseña' />
-
-                <div className='pass-icon' onClick={() => setShowPass(!showPass)}>
-                  {showPass ? <i class="bi bi-eye"></i> : <i class="bi bi-eye-slash"></i>}
-                </div>
-
-
-              </div>   
-                
-            </div>  
-
-            <div>
-              <button className='btn-unirse-si'>INICIAR SESIÓN</button>
-            </div>   
-
-            <div>
-            <p className='or-reset-pass'>¿OLVISASTE TU CONTRASEÑA?</p>
+          <div className=''>
+            <input type="text" className='email-subscribe-li' placeholder='Nombre' />
+            <input type="text" className='email-subscribe-li' placeholder='Apellido' />          
           </div>
-          
-          </div>
-
-         
-        </div>
-
-        <div className='right-side'>
-          <h3>
-            ¿NO TIENES CUENTA?<br />
-            REGÍSTRATE Y HAZ TUS COMPRAS MÁS RÁPIDO.
-          </h3>
 
           <div>
-            <button className='btn-create-si'>CREAR CUENTA</button>
+            <input type="text" className='eemail-subscribe-li' placeholder='Email' />        
+          </div>
+          
+          <div className='pass-inputs'>        
+            
+            <div className='pass-input input-container'>
+              <input type={ showPass ? "text" : "password"}       className='email-subscribe-li' placeholder='Contraseña' 
+              minlength="8" maxlength="20"/>
+                
+              <div className='pass-icon-li' onClick={() => setShowPass(!showPass)}>
+                {showPass ? <i class="bi bi-eye"></i> : <i class="bi bi-eye-slash"></i>}
+              </div>
+
+            </div>   
+            
+            <div className='pass-input input-container'>
+              <input type={ showPass ? "text" : "password"}       className='email-subscribe-li' placeholder='Repetir Contraseña'
+              minlength="8" maxlength="20" />
+                
+              <div className='pass-icon-li' onClick={() => setShowPass(!showPass)}>
+                {showPass ? <i class="bi bi-eye"></i> : <i class="bi bi-eye-slash"></i>}
+              </div>
+
+            </div>               
+          </div>
+
+          <div className=''>
+            <p>
+              <ul className='pass-char'>
+                <li>Combina mayúsculas con minúsculas</li>
+                <li>Ingresa de 8 a 20 caracteres. </li>
+                <li>Agrega por lo menos un número o símbolo..</li>
+              </ul>           
+            </p>
+          </div>
+
+          <div className='want-suscribe'>
+            <input className='check-accept' type="checkbox" id='checkbox'  />                    
+            <p className='links'>Quiero suscribirme a la newsletter</p> 
+          </div>
+
+          <div>
+            <p className='links'>Al presionar “Crear cuenta” acepto el <u>Aviso de Privacidad</u> y <u>Cookies</u> </p>
+          </div>
+
+          <div>
+            <button className='btn-unirse-li'>CREAR CUENTA</button>
+          </div>
+
+          <div>
+            <p className='or-signin'>¿YA TIENES UNA CUENTA? INICIA SESIÓN</p>
           </div>
 
         </div>
 
-      </div>
-      
-
+      </div>  
 
     );
 }
 
-export default SignIn;
+export default LogIn;

@@ -1,9 +1,18 @@
 
+@font-face {
+  font-family: 'MiFuente';
+  src: url('/FrontEnd/src/Fonts/opensans.woff2') format('woff2');
+  /* Puedes añadir otros formatos de fuente aquí para mayor compatibilidad */
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
+.header{
+  color:black;
+}
 
 .general{
   display: flex;
@@ -11,34 +20,15 @@
   justify-content: space-between;
   text-align: left;
   margin: 3% 15%;
+  font-family: 'MiFuente', sans-serif;
 }
 
-.title{
+.right-side-subtitle-h2{
   text-align: left;
+  margin-top: 70px;
+  font-size: 20px;
+  font-weight: 700;
 }
-
-.both-sides{
-  display: flex;
-  flex-direction: row;
-  
-  margin: 10% 0px;
-}
-
-.left-side{
-  border-right: solid;
-  border-color: black;
-  border-width: 1px;
-  width: 57%;
-  
-}
-
-.right-side{
-  text-align: left;
-  padding-left: 10%;
-  
-}
-
-
 
 .email {
   position: relative;
@@ -49,7 +39,7 @@
   justify-content: center;
 }
 
-.email-subscribe-si {
+.email-subscribe-li {
   padding: 15px 10px;
   border: solid;
   font-size: 15px;
@@ -58,50 +48,63 @@
   border-width: 1px;
   border-color: rgb(204, 204, 204);
   margin: 8px 5px;
-  width: 90%;
 }
 
+.eemail-subscribe-li {
+  padding: 15px 10px;
+  border: solid;
+  font-size: 15px;
+  font-weight: bold;
+  outline: none;
+  border-width: 1px;
+  border-color: rgb(204, 204, 204);
+  margin: 8px 5px;
+  width: 470px;
+}
 
-
-.email-subscribe-si::placeholder {
+.email-subscribe-li::placeholder {
   color: black;
   font-weight: bold;
 }
 
-.email-subscribe-si:focus{
-  border-color: black;
-}
-
-.email-subscribe-si:hover{
-  border-color: black;
+.eemail-subscribe-li::placeholder {
+  color: black;
+  font-weight: bold;
 }
 
 
+.email-subscribe-li:focus{
+  border-color: black;
+}
 
-.btn-unirse-si {
+.email-subscribe-li:hover{
+  border-color: black;
+}
+
+.eemail-subscribe-li:focus{
+  border-color: black;
+}
+
+.eemail-subscribe-li:hover{
+  border-color: black;
+}
+
+.pass-char{
+  font-size: 11px;
+}
+
+.want-suscribe{
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-unirse-li {
   background-color: rgb(230, 230, 230);
   border: none;
   padding: 15px 10%;
   color: rgb(153, 153, 153);
   font-weight: bolder;
   margin: 5px;
-  width: 90%;
-}
-
-.btn-create-si {
-  background-color: rgb(0, 0, 0);
-  border: none;
-  padding: 15px 10%;
-  color: rgb(255, 255, 255);
-  font-weight: bolder;
-  margin: 5px;
-  width: 90%;
-
-  transition: all 0.3s ease;
-}
-
-.btn-create-si:hover{
-  opacity: .6;
 }
 
 .pass-inputs{
@@ -113,82 +116,46 @@
 .pass-input{
   position: relative;
 }
-.pass-icon{
+.pass-icon-li{
   position: absolute;
   top: 35%;
-  right: 12%;
+  right: 10%;
   cursor: pointer;
 }
 
-.or-reset-pass{
+.or-signin{
   color: rgb(0, 69, 255);
-  font-size: 12px;
-  margin-top: 20px;
-  font-weight: bold;
+  font-size: smaller;
 }
 
 
 
 
 @media (max-width: 800px) {
-  .both-sides {
-    flex-direction: column;
-  }
- 
-  .left-side{
-    border-right: none;
-    border-bottom: solid;
-    border-color: black;
-    border-width: 1px;
-    width: 98%;
-    margin: 0px 15px;
-    text-align: center;
-  }
-  .pass-icon{
-    right: 10%;
-  }
-
-  .both-sides {
-    flex-direction: column;
-  }
-  .right-side{
-    text-align: left;
-    padding-left: 10%;
-    padding-top: 20px;
-  }
-
-  .pass-inputs {
-    flex-direction: column;
-  }
-  .pass-icon{
-    right: 15%;
-  }
   
- .email-subscribe-si{
-    width: 90%;
-  }
 
-  .btn-unirse-si{
-    width: 90%;
+  .pass-icon-li{
+    position: absolute;
+    top: 35%;
+    right: 59%;
+    cursor: pointer;
+  }
+  .contenedor-footer {
+      width: 100%;
+      margin: 5px 0;
+      flex-basis: calc(25% - 20px); /* Utilizar el 100% del espacio en flex basis */
   }
 }
 
-
-
-@media (max-width: 600px) {
-  .both-sides {
-    flex-direction: column;
-  }
-
-  .pass-inputs {
-    flex-direction: column;
-  }
-  .pass-icon{
-    right: 15%;
-  }
+@media (max-width: 800px) {
   
-  .eemail-subscribe-si{
-    width: 90%;
+  .eemail-subscribe-li {
+    
+    width: 230px;
   }
-
+  .contenedor-footer {
+      width: 100%;
+      margin: 5px 0;
+      flex-basis: calc(25% - 20px); /* Utilizar el 100% del espacio en flex basis */
+  }
 }

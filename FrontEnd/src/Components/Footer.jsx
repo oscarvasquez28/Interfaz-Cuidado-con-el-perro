@@ -7,7 +7,7 @@ function Footer(){
 
         <div className='All-cards-footer'>
             <div className='contenedor-footer'>
-                <h3 className='title'>NOSOTROS</h3>
+                <h3 className='contenedor-footer-title'>NOSOTROS</h3>
                 <p className='links'>Quienes somos</p>
                 <p className='links'>Tiendas</p>
                 <p className='links'>Política de medioambiente</p>
@@ -17,7 +17,7 @@ function Footer(){
             </div>
         
             <div className='contenedor-footer'>
-                <h3 className='title'>AYUDA</h3>
+                <h3 className='contenedor-footer-title'>AYUDA</h3>
                 <p className='links'>Preguntas frecuentes</p>
                 <p className='links'>Contacto</p>
                 <p className='links'>Guía de tallas</p>
@@ -37,7 +37,7 @@ function Footer(){
                 <div className='contenedor-footer'>          
 
                 <div className='texts'>
-                    <h3 className='title'>Promociones y Novedades</h3>
+                    <h3 className='contenedor-footer-title'>PROMOCIONES Y NOVEDADES</h3>
                     <p className='links'>Suscríbete y te daremos un <strong>10% en tu próxima compra</strong>, acceso a ofertas exclusivas y muchas sorpresas más.</p>
                     
                     <br />
