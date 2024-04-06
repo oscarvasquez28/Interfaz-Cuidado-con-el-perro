@@ -1,5 +1,6 @@
 // import React from 'react'
 import React, { useState, useEffect } from 'react';
+// import { Link, useLocation } from 'react-router-dom';
 import '../Components/Header.css'
 import { Link } from 'react-router-dom'
 import perro from '../Images/perro.png'
@@ -27,7 +28,7 @@ const Header = () => {
   
     return (
 
-      <div className={`header-comp ${scrollDown ? 'scrolled' : ''}`}>
+      <div className={`header-comp ${scrollDown ? 'scrolled' : ''} ${location.pathname === '/' ? 'home-route' : 'General'}`}>
         <nav className='header-nav'>
             <div className='header-right'>
                 <Link to ="Home">MUJER</Link>
@@ -39,8 +40,8 @@ const Header = () => {
                  <Link to ="/"> <img src={perro} className="logo" alt="logo" /></Link>
             </div>
              <div className='header-left'>
-                <Link to ="Home">INICIAR SESIÓN</Link>
-                 <Link to ="Create">FAVORITOS</Link>
+                <Link to ="LogIn">INICIAR SESIÓN</Link>
+                 <Link to ="SignIn">FAVORITOS</Link>
                  <Link to ="/">CARRITO</Link>
             </div>
          </nav>  

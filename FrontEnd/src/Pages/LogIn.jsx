@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './LogIn.css';
+import Header from '../Components/Header'
 
 // import bfooter from '../Images/Footer/background-footer.jpg'
 
@@ -7,8 +8,10 @@ function LogIn(){
   const [showPass, setShowPass] = useState(false)
     return (
 
-      <div> 
-        
+      <div>
+        <header className='header'>
+          <Header/>
+        </header>
         <div className='general'>
 
           <div className='title'>

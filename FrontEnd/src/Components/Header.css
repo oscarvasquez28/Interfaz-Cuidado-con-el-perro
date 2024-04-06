@@ -4,15 +4,11 @@
     /* Puedes añadir otros formatos de fuente aquí para mayor compatibilidad */
 }
 
-.header-comp{
-    color: white;
-    /* display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0px 10px;
-    border-bottom: 0.5px solid white; */
+
+
+.home-route{
     background: transparent;
-    padding: 6px 0px 6px 0px;
+    padding: 6px 0px 0px 0px;
     font-family: 'MiFuente', sans-serif;
     position: fixed;
     top: 0;
@@ -23,12 +19,41 @@
     transition: background-color 0.3s ease;
 }
 
+.General {
+    background: white;
+    padding: 6px 0px 0px 0px;
+    font-family: 'MiFuente', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    line-height: 3.5em;
+    transition: background-color 0.3s ease;
+
+
+}
+
+.General .header-nav a{
+    color: black;
+}
+
+.General .header-nav img{
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+  }
+
+
 .header-nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0px 20px;
     border-bottom: 0.5px solid white;
+    
+}
+
+.General .header-nav{
+    border-bottom: 0.5px solid black;
 }
 
 .header-nav div{
@@ -42,6 +67,8 @@
     font-weight: bold;
     color: white;
 }
+
+
 
 .logo{
     height: 5.5vh;
@@ -69,6 +96,16 @@
     cursor: pointer;
 }
 
+.General .header-right a:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.General .header-left a:hover{
+    color: white;
+    cursor: pointer;
+}
+
 .header-comp i{
     padding-right: 8px;
     width: 20px;
@@ -80,6 +117,7 @@
     /* Estilos cuando el usuario hace scroll hacia abajo */
     background: white; /* Cambiar el color de fondo */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra para resaltar */
+    border-bottom: 0.5px solid black;
   }
 
   .header-comp.scrolled a{
