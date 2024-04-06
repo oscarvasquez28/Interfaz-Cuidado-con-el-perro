@@ -28,7 +28,7 @@ function SignIn(){
 
                 <div className='general-title'>
                   <h2 className='right-side-subtitle'>
-                    ENTRA A TU CUENTA
+                    ENTRA EN TU CUENTA
                   </h2>            
                 </div>
 
@@ -53,7 +53,7 @@ function SignIn(){
                   </div> 
                 </form>                
                 <div>
-                  <p className='or-reset-pass'>¿OLVISASTE TU CONTRASEÑA?</p>
+                  <p className='or-reset-pass'>¿OLVIDASTE TU CONTRASEÑA?</p>
                 </div>         
               </div>        
             </div>
