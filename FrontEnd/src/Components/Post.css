@@ -7,7 +7,7 @@
 .posts-container {
   /* background-color: #f9f9f9; */
   padding: 20px;
-   border-radius: 5px;
+  border-radius: 5px;
   text-align:left;
 }
   
@@ -65,10 +65,15 @@
   }
 }
 
-@media screen and (max-width: 1152px) {
+@media screen and (max-width: 1200px) {
   .btn-inline{
     display: inline;
     justify-content: space-between; /* Espacio entre los botones */
+  }
+
+  .btn-inline-right{
+    margin-top: 5px;
+    width: 100%;
   }
 
 }
