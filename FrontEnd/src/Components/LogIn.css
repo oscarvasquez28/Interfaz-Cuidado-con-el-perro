@@ -49,7 +49,7 @@
   border-width: 1px;
   border-color: rgb(204, 204, 204);
   margin: 8px 5px;
-  width: 430px;
+  width: 470px;
 }
 
 .email-subscribe-li::placeholder {
@@ -129,6 +129,19 @@
     top: 35%;
     right: 59%;
     cursor: pointer;
+  }
+  .contenedor-footer {
+      width: 100%;
+      margin: 5px 0;
+      flex-basis: calc(25% - 20px); /* Utilizar el 100% del espacio en flex basis */
+  }
+}
+
+@media (max-width: 800px) {
+  
+  .eemail-subscribe-li {
+    
+    width: 230px;
   }
   .contenedor-footer {
       width: 100%;

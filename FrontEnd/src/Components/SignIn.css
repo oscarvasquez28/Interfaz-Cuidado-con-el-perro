@@ -28,7 +28,7 @@
   border-right: solid;
   border-color: black;
   border-width: 1px;
-  width: 70%;
+  width: 57%;
   
 }
 
@@ -96,8 +96,13 @@
   font-weight: bolder;
   margin: 5px;
   width: 90%;
+
+  transition: all 0.3s ease;
 }
 
+.btn-create-si:hover{
+  opacity: .6;
+}
 
 .pass-inputs{
   display: flex;
