@@ -22,10 +22,12 @@ app.get('/', (req, res) => {
 })
 
 app.post('/usuarios', (req, res) =>{
-    const sql = "INSERT INTO usuarios (Nombre, Correo) VALUES (?)";
+    const sql = "INSERT INTO usuarios (nombre, apellido, correo, contraseña) VALUES (?)";
     const values = [
-        req.body.name,
-        req.body.correo
+        req.body.nombre,
+        req.body.apellido,
+        req.body.correo,
+        req.body.contraseña,
     ]
     db.query(sql, [values], (err, result) => {
         if(err) return res.json(err);
