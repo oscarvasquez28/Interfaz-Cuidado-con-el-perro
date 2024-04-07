@@ -13,16 +13,16 @@ function LogIn(){
         <header className='header'>
           <Header/>
         </header>
-        <div className='general'>
+        <div className='header-general'>
 
-          <div className='right-side-subtitle'>
+          <div>
             <h2 className='right-side-subtitle-h2'>
               CREA TU CUENTA
             </h2>
             <p>Ingresa tus datos para que seas parte de CCP</p>
           </div> 
 
-          <div className=''>
+          <div className='names'>
             <input type="text" className='email-subscribe-li' placeholder='Nombre' />
             <input type="text" className='email-subscribe-li' placeholder='Apellido' />          
           </div>

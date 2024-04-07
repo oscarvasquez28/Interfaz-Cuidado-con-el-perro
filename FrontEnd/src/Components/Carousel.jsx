@@ -18,7 +18,7 @@ const Carousel = props => (
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div className="carousel-inner">
-                <div className="carousel-item active" data-bs-interval="5000">
+                <div className="carousel-item active" data-bs-interval="4000">
                     <img src={Cuidado5} className="d-block w-100" style={{ maxHeight: "100vh" }} alt="banner 1"/>
                     <div className="carousel-caption d-none d-md-block">
                         <h5 style={{ fontSize: "120px" }}>MUJER</h5>

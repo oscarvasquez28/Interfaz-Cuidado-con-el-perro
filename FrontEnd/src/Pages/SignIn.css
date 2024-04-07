@@ -14,30 +14,37 @@
   color:black;
 }
 
-.general{
+.header-general{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
-  margin: 3% 15%;
+  margin-top: calc(70px + 2%);
+  margin-left: 10%;
   font-family: 'MiFuente', sans-serif;
+  width: 100vh;
+  height: calc(100vh - (70px + 2%));
 }
 
 .right-side-subtitle-h2{
   text-align: left;
-  margin-top: 70px;
+  /* margin-top: 70px; */
   font-size: 20px;
   font-weight: 700;
 }
 
-.email {
+.btn-unirse-li{
+  width: 45%;
+}
+
+/* .email {
   position: relative;
   margin: 11% 15%;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .email-subscribe-li {
   padding: 15px 10px;
@@ -48,6 +55,7 @@
   border-width: 1px;
   border-color: rgb(204, 204, 204);
   margin: 8px 5px;
+  width: 45%;
 }
 
 .eemail-subscribe-li {
@@ -59,19 +67,23 @@
   border-width: 1px;
   border-color: rgb(204, 204, 204);
   margin: 8px 5px;
-  width: 470px;
+  width: calc(90% + 10px);
+}
+
+.pass-inputs input{
+  width: 100%;
 }
 
 .email-subscribe-li::placeholder {
   color: black;
-  font-weight: bold;
+  font-weight: 100;
+  /* font-weight: bold; */
 }
 
 .eemail-subscribe-li::placeholder {
   color: black;
-  font-weight: bold;
+  font-weight: 100;
 }
-
 
 .email-subscribe-li:focus{
   border-color: black;
@@ -113,13 +125,18 @@
   position: relative;
 }
 
+.pass-inputs div{
+  width: 45%;
+  margin-right: 10px;
+}
+
 .pass-input{
   position: relative;
 }
 .pass-icon-li{
   position: absolute;
   top: 35%;
-  right: 10%;
+  left: 90%;
   cursor: pointer;
 }
 
@@ -128,7 +145,10 @@
   font-size: smaller;
 }
 
-
+.pass-icon-li{
+  max-width: 20px;
+  
+}
 
 
 @media (max-width: 800px) {
@@ -137,21 +157,48 @@
   .pass-icon-li{
     position: absolute;
     top: 35%;
-    right: 59%;
+    left: 95%;
     cursor: pointer;
   }
-  .contenedor-footer {
+  /* .contenedor-footer {
       width: 100%;
       margin: 5px 0;
-      flex-basis: calc(25% - 20px); /* Utilizar el 100% del espacio en flex basis */
+      flex-basis: calc(25% - 20px); 
+  } */
+  .header-general{
+    width: 95%;
+    margin-left: 15px;
+    margin-right: 10px;
+  }
+
+  .names input{
+    width: 100%;
+  }
+
+  .pass-inputs > div:not(.pass-icon-li){
+    width: 100%;
+    margin-right: 10px;
+  }
+
+  .pass-inputs{
+    display: inline;
+    width: 100%;
+  }
+
+  .pass-inputs input{
+    width: 100%;
+  }
+
+  .pass-icon-li{
+    max-width: 20px;
+    
   }
 }
 
 @media (max-width: 800px) {
   
   .eemail-subscribe-li {
-    
-    width: 230px;
+    width: 100%
   }
   .contenedor-footer {
       width: 100%;
