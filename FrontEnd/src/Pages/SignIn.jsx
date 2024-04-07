@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate} from 'react-router-dom'
 import './LogIn.css';
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
@@ -21,7 +23,8 @@ function LogIn(){
     setEmail(event.target.value);
   };
   const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
+    setValues({...values, contraseña: event.target.value});
+    console.log(values); // Imprime el objeto values actualizado después de cambiar la contraseña
   };
   const handleRepPassChange = (event) => {
     setRepPassword(event.target.value);
@@ -36,7 +39,39 @@ function LogIn(){
     setIsChecked(!isChecked); // invierte el estado del checkbox
   };
 
-
+  const [values, setValues ] = useState({
+    nombre: '',
+    apellido: '',
+    correo: '',
+    contraseña: ''
+  })
+  const navigate = useNavigate();
+  // const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     axios.post('http://localhost:8081/usuarios' , values)
+  //     .then(res => {
+  //         console.log(res);
+  //         navigate('/')
+  //     })
+  //     .catch(err => console.log(err))
+  // }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
+    // Verifica si las contraseñas son iguales
+    if (values.contraseña !== repPassword) {
+      alert("Las contraseñas no coinciden");
+      return;
+    }
+    
+    // Si las contraseñas coinciden, puedes continuar con tu lógica de envío de formulario
+    axios.post('http://localhost:8081/usuarios' , values)
+      .then(res => {
+          console.log(res);
+          navigate('/')
+      })
+      .catch(err => console.log(err))
+  };
 
     return (
 
@@ -53,24 +88,24 @@ function LogIn(){
             <p>Ingresa tus datos para que seas parte de CCP</p>
           </div> 
 
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <div className='names'>
 
-              <input type="text" className='email-subscribe-li' placeholder='Nombre' value={name} onChange={handleNameChange}/>
+              <input type="text" className='email-subscribe-li' placeholder='Nombre' onChange={e => setValues({...values, nombre: e.target.value})}/>
 
-              <input type="text" className='email-subscribe-li' placeholder='Apellido' value={lastName} onChange={handleLastNameChange} />
+              <input type="text" className='email-subscribe-li' placeholder='Apellido' onChange={e => setValues({...values, apellido: e.target.value})} />
 
             </div>
 
             <div>
-              <input type="text" className='eemail-subscribe-li' placeholder='Email' value={email} onChange={handleEmailChange}/>        
+              <input type="text" className='eemail-subscribe-li' placeholder='Email' onChange={e => setValues({...values, correo: e.target.value})}/>        
             </div>
             
             <div className='pass-inputs'>        
               
               <div className='pass-input input-container'>
-                <input type={ showPass ? "text" : "password"}       className='email-subscribe-li' placeholder='Contraseña' 
-                minlength="8" maxlength="20" value={password} onChange={handlePasswordChange}/>
+                <input type={ showPass ? "text" : "password"} className='email-subscribe-li' placeholder='Contraseña' 
+                minLength="8" maxLength="20" onChange={e => setValues({...values, contraseña: e.target.value})}/>
                   
                 <div className='pass-icon-li' onClick={() => setShowPass(!showPass)}>
                   {showPass ? <i className="bi bi-eye"></i> : <i className="bi bi-eye-slash"></i>}
@@ -79,8 +114,8 @@ function LogIn(){
               </div>   
               
               <div className='pass-input input-container'>
-                <input type={ showPass ? "text" : "password"}       className='email-subscribe-li' placeholder='Repetir Contraseña'
-                minlength="8" maxlength="20" value={repPassword} onChange={handleRepPassChange} />
+                <input type={ showPass ? "text" : "password"} className='email-subscribe-li' placeholder='Repetir Contraseña'
+                minLength="8" maxLength="20" value={repPassword} onChange={handleRepPassChange}/>
                   
                 <div className='pass-icon-li' onClick={() => setShowPass(!showPass)}>
                   {showPass ? <i className="bi bi-eye"></i> : <i className="bi bi-eye-slash"></i>}
@@ -90,13 +125,13 @@ function LogIn(){
             </div>
 
             <div className=''>
-              <p>
+              {/* <p> */}
                 <ul className='pass-char'>
                   <li>Combina mayúsculas con minúsculas</li>
                   <li>Ingresa de 8 a 20 caracteres. </li>
                   <li>Agrega por lo menos un número o símbolo..</li>
                 </ul>           
-              </p>
+              {/* </p> */}
             </div>
 
             <div className='want-suscribe'>

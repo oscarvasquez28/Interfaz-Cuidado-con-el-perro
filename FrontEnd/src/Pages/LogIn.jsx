@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import './SignIn.css';
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
@@ -40,11 +41,11 @@ function SignIn(){
 
                   <div className=''>        
                     <div className='pass-input'>
-                      <input type={ showPass ? "text" : "password"}       className='email-subscribe-si' placeholder='Contraseña' value={password} 
+                      <input type={ showPass ? "text" : "password"} className='email-subscribe-si' placeholder='Contraseña' value={password} 
                       onChange={handlePasswordChange}/>
 
                       <div className='pass-icon' onClick={() => setShowPass (!showPass)}>
-                      {showPass ? <i class="bi bi-eye"></i> : <i class="bi bi-eye-slash"></i>}
+                      {showPass ? <i className="bi bi-eye"></i> : <i className="bi bi-eye-slash"></i>}
                       </div>
                     </div>   
                   </div>  
@@ -63,7 +64,7 @@ function SignIn(){
                 REGÍSTRATE Y HAZ TUS COMPRAS MÁS RÁPIDO.
               </h3>
               <div>
-                <button className='btn-create-si'>CREAR CUENTA</button>
+                <Link to ="/SignIn"><button className='btn-create-si'>CREAR CUENTA</button></Link>
               </div>
             </div>
           </div>
@@ -74,3 +75,4 @@ function SignIn(){
 }
 
 export default SignIn;
+

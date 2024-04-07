@@ -59,11 +59,11 @@ function Footer(){
 
                 <br />
                 <div className='social-media'>
-                    <i class="bi bi-instagram SM-logo"></i>
-                    <i class="bi bi-tiktok SM-logo"></i>
-                    <i class="bi bi-youtube SM-logo"></i>
-                    <i class="bi bi-twitter SM-logo"></i>
-                    <i class="bi bi-facebook SM-logo"></i>
+                    <i className="bi bi-instagram SM-logo"></i>
+                    <i className="bi bi-tiktok SM-logo"></i>
+                    <i className="bi bi-youtube SM-logo"></i>
+                    <i className="bi bi-twitter SM-logo"></i>
+                    <i className="bi bi-facebook SM-logo"></i>
                 </div>   
                     
                 </div>    
