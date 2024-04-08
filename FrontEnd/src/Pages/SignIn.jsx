@@ -9,7 +9,10 @@ import Footer from '../Components/Footer'
 
 function LogIn(){
   const [showPass, setShowPass] = useState(false)
-  
+  const [name, setName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [repPassword, setRepPassword] = useState('');
   const [isChecked, setIsChecked] = useState(false);
 
@@ -31,7 +34,7 @@ function LogIn(){
   };
   const handleLastNameChange = (event) => {
     setLastName(event.target.value);
-  };j
+  };
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked); // invierte el estado del checkbox
   };
