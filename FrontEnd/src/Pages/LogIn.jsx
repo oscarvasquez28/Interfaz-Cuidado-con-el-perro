@@ -70,7 +70,7 @@ function SignIn() {
                   </div>   
                 </div>  
                 <div>
-                  <button className="btn-unirse-si" type='submit'>INICIAR SESIÓN</button>
+                  <button className={values.correo !== '' && values.contraseña !== '' ? "btn-create-si"  : "btn-unirse-si"} type='submit'>INICIAR SESIÓN</button>
                 </div> 
               </form>                
               <div>

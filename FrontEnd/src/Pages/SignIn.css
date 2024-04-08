@@ -117,6 +117,7 @@
   color: rgb(153, 153, 153);
   font-weight: bolder;
   margin: 5px;
+  cursor: default;
 }
 
 .btn-create-li   {
