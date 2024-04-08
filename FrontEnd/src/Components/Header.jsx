@@ -1,11 +1,13 @@
 // import React from 'react'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 // import { Link, useLocation } from 'react-router-dom';
 import '../Components/Header.css'
 import { Link } from 'react-router-dom'
 import perro from '../Images/perro.png'
+import UserContext from '../Context/UserContext'; // Importa el contexto
 
 const Header = () => {
+  const { username } = useContext(UserContext);
     // Estado para controlar si se debe aplicar un fondo diferente al encabezado
     const [scrollDown, setScrollDown] = useState(false);
   
@@ -40,9 +42,15 @@ const Header = () => {
                  <Link to ="/"> <img src={perro} className="logo" alt="logo" /></Link>
             </div>
              <div className='header-left'>
-                <Link to ="/LogIn">INICIAR SESIÓN</Link>
+              {/* Expresión condicional para determinar qué mostrar en el Link */}
+                {username !== '' ? (
+                  <Link to="/profile" className='header-left-mayus'>{username}</Link>
+                ) : (
+                  <Link to="/LogIn">INICIAR SESIÓN</Link>
+                )}
                  <Link to ="/SignIn">FAVORITOS</Link>
-                 <Link to ="/">CARRITO</Link>
+                 <Link to ="/SignIn">CARRITO</Link>
+
             </div>
          </nav>  
      </div>

@@ -13,11 +13,13 @@ import Read  from './Read.jsx'
 import Dashboard from './Dashboard.jsx';
 import SignIn from './SignIn.jsx'
 import LogIn from './LogIn.jsx'
+import { UserProvider } from '../Context/UserContext.jsx';
 
 
 function App() {
   return (
     <BrowserRouter>
+    <UserProvider>
       <Routes>
           <Route path='/' element={<Dashboard />} />
           <Route path='/Home' element={<Home />} />
@@ -26,6 +28,7 @@ function App() {
           <Route path='/LogIn' element={<LogIn />} />
           <Route path='/SignIn' element={<SignIn />} />
       </Routes>
+      </UserProvider>
     </BrowserRouter>
   );
 }
