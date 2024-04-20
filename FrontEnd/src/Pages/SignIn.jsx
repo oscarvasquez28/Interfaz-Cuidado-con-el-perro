@@ -144,7 +144,7 @@ function LogIn(){
             </div>
 
             <div>
-              <button className={ (values.apellido !== '' && values.contraseña !== '' && values.correo !== '' && values.nombre !== '' && repPassword!== '') ? "btn-create-li" : "btn-unirse-li"} type='submit'>CREAR CUENTA</button>
+              <button className={ (password !== '' && email !== '' && name !== '' && lastName !== '' && repPassword !== '') ? "btn-create-li" : "btn-unirse-li"} type='submit'>CREAR CUENTA</button>
             </div>
 
           </form>

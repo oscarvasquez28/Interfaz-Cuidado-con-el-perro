@@ -25,7 +25,7 @@ const Post = (props) => {
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                 />
-                <p>Articulo: {articulo}</p>
+                <p>{articulo}</p>
                 <p className='Precio-bold'>Precio: ${precio}.00</p>
                 <p>Color: {color}</p>
                 <div className='btn-inline'>

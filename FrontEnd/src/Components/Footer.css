@@ -123,6 +123,7 @@ form .contenedor-footer {
     margin: 0px 5px;
     border-width: 2px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .SM-logo:hover {

@@ -1,0 +1,36 @@
+.Edades-kids{
+    display: flex;
+    
+    /* border-top: 1px solid black; */
+    border-bottom: 1px solid black;
+    margin: 0px 20px;
+}
+
+.Kids-Margin{
+    background: white;
+}
+
+.Edades-kids div{
+    flex-basis: 25%;
+}
+
+.Edades-kids h3{
+    text-align: center;
+    margin-top: 10px;
+    padding: 0px 5px;
+    font-size: 23px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+h3:hover{
+    background: black;
+    color: white;
+}
+
+.Edades-kids div div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

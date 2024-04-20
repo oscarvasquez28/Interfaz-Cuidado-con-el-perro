@@ -13,6 +13,12 @@ import Read  from './Read.jsx'
 import Dashboard from './Dashboard.jsx';
 import SignIn from './SignIn.jsx'
 import LogIn from './LogIn.jsx'
+import Kids from './Kids.jsx'
+import Hombre from './Hombre.jsx'
+import Mujer from './Mujer.jsx'
+import Favoritos from './Favoritos.jsx';
+import Carrito from './Carrito.jsx'
+
 import { UserProvider } from '../Context/UserContext.jsx';
 
 
@@ -27,6 +33,11 @@ function App() {
           <Route path='/read/:id' element={<Read />} />
           <Route path='/LogIn' element={<LogIn />} />
           <Route path='/SignIn' element={<SignIn />} />
+          <Route path='/Mujer' element={<Mujer />} />
+          <Route path='/Hombre' element={<Hombre />} />
+          <Route path='/Kids' element={<Kids />} />
+          <Route path='/Favoritos' element={<Favoritos />} />
+          <Route path='/Carrito' element={<Carrito />} />
       </Routes>
       </UserProvider>
     </BrowserRouter>
