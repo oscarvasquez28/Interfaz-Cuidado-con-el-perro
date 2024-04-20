@@ -8,24 +8,24 @@ function KidsMenu() {
         <div className="Edades-kids">
             <div className='Edades-First'>
                 <div>
-                <span><h3>Bebé</h3></span>
+                <span><h3 className='Edades-subtitle'>Bebé</h3></span>
                 </div>
                 
             </div>
             <div className='Edades-Second'>
                 <div>
-                <span><h3>Niña</h3></span>
+                <span><h3 className='Edades-subtitle'>Niña</h3></span>
                 </div>
             </div>
             <div className='Edades-Third'>
                 <div>
-                <span><h3>Niño</h3></span>
+                <span><h3 className='Edades-subtitle'>Niño</h3></span>
                 </div>
                 
             </div>
             <div className='Edades-Fourth'>
                 <div>
-                <span><h3>Chico</h3></span>
+                <span><h3 className='Edades-subtitle'>Chico</h3></span>
                 </div>
                 
             </div>

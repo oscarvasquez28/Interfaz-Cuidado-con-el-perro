@@ -24,7 +24,8 @@
     transition: ease-in-out 0.3s;
 }
 
-h3:hover{
+
+.Edades-subtitle:hover{
     background: black;
     color: white;
 }
