@@ -48,7 +48,7 @@ function Dashboard() {
           <Post imagen={Esponja} imagenHover={Esponja2} articulo="Playera Manga Larga Estampado Bob Esponja" precio={199.00} color="MULTICOLOR"/>
           <Post imagen={Goku} imagenHover={Goku2} articulo="Playera Estampado Licencia" precio={89.90} color="ESTAMPADO"/>
           <Post imagen={Vegeta} imagenHover={Vegeta2} articulo="Playera Vegeta Saiyan" precio={159.00} color="NEGRO"/>
-          <Post imagen={Estampado} imagenHover={Estampado2} articulo="Playera Básica Estampado Dibujos en Toda la Prenda" precio={109.00} color="BLANCO"/>
+          <Post imagen={Estampado} imagenHover={Estampado2} articulo="Playera Básica Estampado Dibujos" precio={109.00} color="BLANCO"/>
           <Post imagen={Smile} imagenHover={Smile2} articulo="Playera Manga Corta Estampada" precio={89.00} color="ESTAMPADO"/>
 
         </div>

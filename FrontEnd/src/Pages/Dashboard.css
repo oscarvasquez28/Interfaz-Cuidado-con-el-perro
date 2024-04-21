@@ -12,7 +12,7 @@
    /* Opcional: Establece un ancho máximo para el contenedor principal */
   margin: 0 auto; /* Centra el contenedor horizontalmente */
   padding: 20px;
-  margin-top: 44px;
+  margin-top: 5px;
 }
 
 /* Post.css */
@@ -43,6 +43,18 @@
   height: auto;
   margin-bottom: 10px;
 } */
+
+
+  /*Esto es para que el post tenga un width del 100% en Post.jsx*/
+@media screen and (max-width: 830px) { 
+
+  .posts-container div{
+    width: calc(100% - 40px);
+    /* margin: 0px 20px; */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
 
 @keyframes App-logo-spin {
   from {
