@@ -1,4 +1,4 @@
-import './Post.css'
+import './Post.css' 
 import React, { useState } from 'react'
 import Talla from './Talla'
 import AddCarrito from './AddCarrito'

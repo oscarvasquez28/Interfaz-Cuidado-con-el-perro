@@ -20,6 +20,9 @@ const Header = () => {
     const [mostrarMenu2, setMostrarMenu2] = useState(false);
     const [mostrarMenu3, setMostrarMenu3] = useState(false);
 
+    //Para saber si está el cursor sobre el nav
+    const [isHovered, setIsHovered] = useState(false);
+
     // Función para manejar el evento de scroll
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -39,9 +42,16 @@ const Header = () => {
   
     return (
 
-      <div className={`header-comp ${scrollDown ? 'scrolled' : ''} ${location.pathname === '/' ? 'home-route' : 'General'}`}>
+      <div
+      className={`header-comp ${scrollDown ? 'scrolled' : ''} ${location.pathname === '/' ? 'home-route' : 'General'} 
+      ${(isHovered || mostrarMenu1 || mostrarMenu2 || mostrarMenu3) ? 'hovered-nav' : ''}`}>
         <nav className='header-nav'>
-            <div className='header-left'>
+              <div
+              className={`header-left ${(isHovered) 
+                ? 'hovered-header-left' : ''}`}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              >
               <div className='alturaa' onMouseEnter={() => {
                 setMostrarMenu1(true);
                 setMostrarMenuMujer(false);

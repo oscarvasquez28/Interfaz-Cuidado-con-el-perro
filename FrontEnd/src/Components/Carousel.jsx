@@ -7,6 +7,7 @@ import Cuidado3 from '../Images/Carousel-images/cuidado3.jpg'
 import Cuidado5 from '../Images/Carousel-images/cuidado5.jpg'
 // import Cuidado6 from '../Images/cuidado6.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import './Carousel.css'
 
 const Carousel = props => (
 
@@ -19,21 +20,21 @@ const Carousel = props => (
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="4000">
-                    <img src={Cuidado5} className="d-block w-100" style={{ maxHeight: "100vh" }} alt="banner 1"/>
+                    <img src={Cuidado5} className="d-block w-100" style={{ maxHeight: "82vh" }} alt="banner 1"/>
                     <div className="carousel-caption d-none d-md-block">
                         <h5 style={{ fontSize: "120px" }}>MUJER</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                     </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="4000">
-                    <img src={Cuidado2} className="d-block w-100" style={{ maxHeight: "100vh" }} alt="banner 2"/>
+                    <img src={Cuidado2} className="d-block w-100" style={{ maxHeight: "82vh" }} alt="banner 2"/>
                     <div className="carousel-caption d-none d-md-block">
                         <h5 style={{ fontSize: "120px" }}>HOMBRE</h5>
                         <p>Some representative placeholder content for the second slide.</p>
                     </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="4000">
-                    <img src={Cuidado3} className="d-block w-100" style={{ maxHeight: "100vh" }} alt="banner 3"/>
+                    <img src={Cuidado3} className="d-block w-100" style={{ maxHeight: "82vh" }} alt="banner 3"/>
                     <div className="carousel-caption d-none d-md-block">
                         <h5 style={{ fontSize: "120px" }}>KIDS</h5>
                         <p>Some representative placeholder content for the third slide.</p>

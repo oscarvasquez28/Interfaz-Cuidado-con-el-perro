@@ -56,7 +56,8 @@
     justify-content: space-between;
     margin: 0px 20px;
     border-bottom: 0.5px solid white;
-    
+    /* pointer-events: none; */
+    margin-bottom: -1px;
 }
 
 .General .header-nav{
@@ -161,8 +162,34 @@
     text-transform: uppercase;
   }
 
+  .hovered-nav{
+    background: white;
+    border-bottom: 0.5px solid white;
+    transition: ease-in-out 0.3s;
+  }
 
-  @media screen and (max-width: 800px) {
+  .hovered-nav .header-nav a{
+    color: black;
+}
+
+.hovered-nav .header-nav img{
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+  }
+
+  .hovered-header-left a:hover{
+    color: white;
+  }
+
+  .alturaa{
+    margin-bottom: 20px;
+  }
+
+  .header-comp.home-route .alturaa{
+    margin-bottom: 20px;
+  }
+
+
+  @media screen and (max-width: 830px) {
     .header-right {
         display: none;
     }
