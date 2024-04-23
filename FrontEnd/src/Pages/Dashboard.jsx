@@ -24,6 +24,7 @@ import Smile from '../Images/Ropa/Kids/smile.jpg'
 import Smile2 from '../Images/Ropa/Kids/smile2.jpg'
 
 
+
 // import fondo from './cuidado1.jpg'
 function Dashboard() {
   return (

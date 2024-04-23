@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Talla from './Talla'
 import AddCarrito from './AddCarrito'
 
-
 const Post = (props) => {
     const { imagen, imagenHover, articulo, precio, color, talla } = props;
     const [hovered, setHovered] = useState(false);

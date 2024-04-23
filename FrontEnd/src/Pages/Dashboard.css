@@ -4,6 +4,7 @@
   padding: 0px;
 }
 
+
 .App-novedades{
   /* position: relative;
   width: 100%;
@@ -12,15 +13,17 @@
    /* Opcional: Establece un ancho máximo para el contenedor principal */
   margin: 0 auto; /* Centra el contenedor horizontalmente */
   padding: 20px;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 
+
+
 /* Post.css */
-.Post {
-  flex-basis: calc(20% - 20px); /* Establece el ancho base del componente Post */
+/* .Post {
+  flex-basis: calc(20% - 20px); 
   margin-bottom: 20px;
-  box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del tamaño */
-}
+  box-sizing: border-box; 
+} */
 
 /* .Post-container {
   border-radius: 5px;
@@ -38,6 +41,11 @@
   margin-bottom: 12px;
 }
 
+.posts-container > * {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 /* .Post-img {
   width: 100%;
   height: auto;
@@ -46,15 +54,7 @@
 
 
   /*Esto es para que el post tenga un width del 100% en Post.jsx*/
-@media screen and (max-width: 830px) { 
 
-  .posts-container div{
-    width: calc(100% - 40px);
-    /* margin: 0px 20px; */
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-}
 
 @keyframes App-logo-spin {
   from {

@@ -1,138 +1,29 @@
 .Post {
-   /* Establece el ancho base del componente Post */
-  flex-basis: calc(32%);
-  margin-bottom: 20px;
-  box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del tamaño */
+  width: 100%; /* Ocupar todo el ancho disponible en la columna */
 }
 
-
-
-/* .Post-container{
-  margin-right: 10px;
+.Post-container {
+  height: 100%; /* Ocupar toda la altura del contenedor */
+  width: 40vh; /* Ancho del contenedor */
+  display: flex; /* Utilizar flexbox para alinear los elementos verticalmente */
+  flex-direction: column; /* Apilar los elementos verticalmente */
 }
-   */
+
+.btn-inline {
+  margin-top: auto; /* Mover los botones hacia la parte inferior */
+}
+
 .posts-container {
-  /* background-color: #f9f9f9; */
-  padding: 20px;
-  border-radius: 5px;
-  text-align:left;
+  display: grid; /* Utilizar grid para los posts */
+  grid-template-columns: repeat(auto-fill, minmax(40vh, 1fr)); /* Columnas con ancho mínimo y máximo */
+  grid-gap: 10px; /* Espacio entre los posts */
 }
-  
+
 .Post-img {
-  width: 100%;
-  height: 65vh;
+  width: 100%; /* Ajustar la imagen al ancho del contenedor */
   margin-bottom: 10px;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
 }
-.Post p{
-  /* font-size: 12px; */
-  white-space: nowrap;
-}
-
-.Post-img:hover{
-  transform: scale(0.99);
-}
-  
-.posts-container {
-  display: flex;
-  flex-wrap: wrap; /* Permite que los componentes Post se envuelvan en líneas adicionales si no caben en la misma fila */
-  justify-content: space-between; /* Distribuye los componentes Post de manera uniforme en el contenedor */
-}
-
-  
-.Precio-bold{
-  font-weight: bold;
-}
-
-.btn-inline{
-  display: flex;
-  justify-content: space-between; /* Espacio entre los botones */
-}
-
-/* .btn-inline div{
-  flex-basis: calc(49% );
-  text-align: right;
-  width: 100%;
-
-} */
 
 .btn-inline-right{
-  flex-basis: calc(49% );
-  /* text-align: right; */
-  width: 100%;
-}
-
-.btn-inline-left{
-  flex-basis: calc(49% );
-  /* text-align: right; */
-  width: 100%;
-}
-
-
-
-@media screen and (max-width: 830px) {
-  .Post {
-    /* Cambia el ancho del componente Post cuando la pantalla es más pequeña */
-    /* flex-basis: calc(50% - 20px);  */
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .Post p{
-    /* font-size: 12px; */
-    white-space: nowrap;
-  }
-  .posts-container {
-    /* display: flex; */
-    display: inline;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .Post-img {
-    width:100%;
-    height:80vh;
-    /* height: 100%; */
-  }
-
-  .btn-inline .btn-inline-right{
-    margin-top: 10px;
-  }
-
-}
-
-@media screen and (min-width: 830px) and (max-width: 950px) {
-  .Post-img {
-    width: 340px;
-    height: 65vh;
-  }
-}
-
-@media screen and (max-width: 1230px) {
-  .btn-inline{
-    display: inline;
-    justify-content: space-between; /* Espacio entre los botones */
-  }
-
-  .btn-inline-right{
-    margin-top: 5px;
-    width: 100%;
-  }
-
-  .posts-container {
-    /* display: flex; */
-    justify-content:space-around; /* Distribuye los componentes Post de manera uniforme en el contenedor */
-    
-  }
-
-  .Post{
-    flex-basis: calc(40%);
-  }
-
-  .Post p{
-    white-space: nowrap;
-  }
-
+  padding-top: 10px;
 }
