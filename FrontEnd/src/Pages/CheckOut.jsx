@@ -163,13 +163,22 @@ function CheckOut() {
               color='Gris'
               talla='G'
               />
+
+              
+              {/* <PostCheckOut
+              image={PlayeraGris2}
+              articulo='Camisa'
+              precio='150'
+              color='Gris'
+              talla='G'
+              /> */}
               
             </div>
 
 
             <div  className='rows-pedido'>
               <p>Subtotal</p>
-              <p>$628.00</p>
+              <p>$300.00</p>
             </div>
 
             <div  className='rows-pedido'>
@@ -182,7 +191,7 @@ function CheckOut() {
                 <p>Total</p>
               </div>
               
-              <p> <b>628.00</b> </p>
+              <p> <b>$300.00</b> </p>
             </div>
 
           </div>

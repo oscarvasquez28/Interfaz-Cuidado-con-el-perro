@@ -53,7 +53,8 @@
 }
  
 .pco-Post-img {
- width: 12vh;
+ /* width: 12vh; */
+ width: 15vh;
  height: 95%;
  min-height: 15vh;
  margin-bottom: 20px;

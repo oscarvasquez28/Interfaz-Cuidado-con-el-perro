@@ -24,6 +24,10 @@
   cursor: pointer;
 }
 
+.p-dropdown-item{
+  padding: 5px 10px;
+}
+
 
 .p-dropdown-item:hover{
   background-color: black;

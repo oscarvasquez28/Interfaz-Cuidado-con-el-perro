@@ -109,7 +109,12 @@
   width: 100%;
 }
 
+.botonPagar:hover{
+  background: rgb(49, 49, 49);
+}
+
 .Precio-bold{
   font-weight: bolder;
+  cursor: pointer;
 }
  

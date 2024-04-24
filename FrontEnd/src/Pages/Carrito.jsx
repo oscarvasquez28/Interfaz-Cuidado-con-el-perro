@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 
 import PlayeraGris from '../Images/Ropa/Hombre/vegeta.jpg';
 import PlayeraGris2 from '../Images/Ropa/Hombre/playera-gris-2.jpg'
@@ -12,10 +12,10 @@ import '../Pages/Carrito.css';
 
 
 function Carrito() {
-  const handleClick = () => {
-    // Abrir una nueva ventana con la URL deseada
-    window.open('/CheckOut', '_blank');
-  };
+  // const handleClick = () => {
+  //   // Abrir una nueva ventana con la URL deseada
+  //   window.open('/CheckOut', '_blank');
+  // };
 
   return (
     <div className='all-container'>
@@ -39,23 +39,23 @@ function Carrito() {
               image={PlayeraGris}
               articulo='Camisa Manga larga Oxford Tipo Lino'
               precio='150'
-              color='Gris'
+              color='NEGRO'
               talla='CH'
             />
 
-            <PostCarrito
-              image={PlayeraGris2}
-              articulo='Camisa'
-              precio='150'
-              color='Gris'
+            {/* <PostCarrito
+              image={'https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_7374.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} imagenHover={'https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_7361.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'}
+              articulo='Mujer-Container-Dashboard-Posts'
+              precio='279'
+              color='BLANCO'
               talla='G'
-            /> 
+            />  */}
 
             <PostCarrito
               image={PlayeraGris2}
-              articulo='Camisa 2'
-              precio='15805'
-              color='Gris'
+              articulo='Playera Rayas Gris Perro'
+              precio='150'
+              color='GRIS'
               talla='G'
             /> 
 
@@ -79,7 +79,7 @@ function Carrito() {
 
             <div className='rows-resumen' >
               <p>Total parcial</p>
-              <p>$628.00</p>
+              <p>$300.00</p>
             </div>
 
             <div className='rows-resumen'>
@@ -89,7 +89,7 @@ function Carrito() {
 
             <div className='rows-resumen total'>
               <p>Total</p>
-              <p className='Precio-bold'>$628.00</p>
+              <p className='Precio-bold'>$300.00</p>
             </div>
 
 
@@ -99,11 +99,12 @@ function Carrito() {
               <p>Envio gratuito</p>
              
             </div>
-
-            <button className='botonPagar'
-            onClick={handleClick}>
+            <Link to ="/CheckOut"><button className='botonPagar'
+            // onClick={handleClick}
+            >
              IR A PAGAR
-            </button>
+            </button></Link>
+
 
           </div>
 
