@@ -22,16 +22,54 @@ app.get('/', (req, res) => {
 })
 
 app.post('/usuarios', (req, res) =>{
-    const sql = "INSERT INTO usuarios (Nombre, Correo) VALUES (?)";
+    const sql = "INSERT INTO usuarios (nombre, apellido, correo, contraseña) VALUES (?)";
     const values = [
-        req.body.name,
-        req.body.correo
+        req.body.nombre,
+        req.body.apellido,
+        req.body.correo,
+        req.body.contraseña,
     ]
     db.query(sql, [values], (err, result) => {
         if(err) return res.json(err);
         return res.json(result);
     })
 })
+
+// app.post('/Log', (req, res) => {
+//     const sql = "SELECT * FROM usuarios WHERE correo = ? and contraseña = ?";
+//     const values = [
+//         req.body.correo,
+//         req.body.contraseña,
+//     ]
+//     db.query(sql, [values], (err, result) => {
+//         if(err) return res.json({Message: "Error inside server"});
+//         return res.json(result);
+//     })
+// })
+app.post('/Log', (req, res) => {
+    const sql = "SELECT * FROM usuarios WHERE correo = ? AND contraseña = ?";
+    const values = [
+        req.body.correo,
+        req.body.contraseña,
+    ];
+
+    db.query(sql, values, (err, result) => {
+        if (err) {
+            // Si hay un error en la consulta SQL, enviar un mensaje de error al cliente
+            return res.status(500).json({ error: "Error interno del servidor" });
+        }
+
+        if (result.length > 0) {
+            // Si se encuentra el usuario, enviar los datos del usuario al cliente
+            return res.json(result);
+        } else {
+            // Si no se encuentra el usuario, enviar un mensaje de error al cliente
+            return res.json({ Message: "usuario no encontrado" });
+        }
+    });
+});
+
+
 
 app.get('/read/:id', (req, res) => {
     const sql = "SELECT * FROM usuarios WHERE ID = ?";

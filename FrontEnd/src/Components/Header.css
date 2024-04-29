@@ -4,24 +4,51 @@
     /* Puedes añadir otros formatos de fuente aquí para mayor compatibilidad */
 }
 
-.header-comp{
-    color: white;
-    /* display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0px 10px;
-    border-bottom: 0.5px solid white; */
+
+
+.home-route{
     background: transparent;
-    padding: 6px 0px 6px 0px;
+    padding: 6px 0px 0px 0px;
     font-family: 'MiFuente', sans-serif;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
-    line-height: 3.5em;
+    /* line-height: 3.5em; */
     transition: background-color 0.3s ease;
 }
+
+.General {
+    background: white;
+    padding: 6px 0px 0px 0px;
+    font-family: 'MiFuente', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.header-nav{
+    line-height: 3.5em;
+}
+
+.altura-center{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.General .header-nav a{
+    color: black;
+}
+
+.General .header-nav img{
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+  }
+
 
 .header-nav{
     display: flex;
@@ -29,6 +56,12 @@
     justify-content: space-between;
     margin: 0px 20px;
     border-bottom: 0.5px solid white;
+    /* pointer-events: none; */
+    margin-bottom: -1px;
+}
+
+.General .header-nav{
+    border-bottom: 0.5px solid black;
 }
 
 .header-nav div{
@@ -43,12 +76,27 @@
     color: white;
 }
 
+
+
 .logo{
     height: 5.5vh;
 }
 
 .header-center:hover{
     cursor: pointer;
+}
+
+.header-right a{
+    transition: ease-in-out 0.3s;
+}
+
+.header-left a{
+    transition: ease-in-out 0.3s;
+    
+}
+
+.header-left{
+    display: flex;
 }
 
 .header-right a:hover{
@@ -58,6 +106,16 @@
 
 .header-left a:hover{
     background: black;
+    cursor: pointer;
+}
+
+.General .header-right a:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.General .header-left a:hover{
+    color: white;
     cursor: pointer;
 }
 
@@ -72,7 +130,21 @@
     /* Estilos cuando el usuario hace scroll hacia abajo */
     background: white; /* Cambiar el color de fondo */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra para resaltar */
+    /* border-bottom: 0.5px solid black; */
   }
+
+  .header-comp.scrolled .header-nav{
+    border-bottom: 0.5px solid black;
+  }
+
+  .General.scrolled {
+    /* Estilos cuando el usuario hace scroll hacia abajo */
+    background: white; /* Cambiar el color de fondo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra para resaltar */
+    border-bottom: none;
+  }
+
+
 
   .header-comp.scrolled a{
     color: black;
@@ -86,8 +158,38 @@
     filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
   }
 
+  .header-left-mayus{
+    text-transform: uppercase;
+  }
 
-  @media screen and (max-width: 800px) {
+  .hovered-nav{
+    background: white;
+    border-bottom: 0.5px solid white;
+    transition: ease-in-out 0.3s;
+  }
+
+  .hovered-nav .header-nav a{
+    color: black;
+}
+
+.hovered-nav .header-nav img{
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+  }
+
+  .hovered-header-left a:hover{
+    color: white;
+  }
+
+  .alturaa{
+    margin-bottom: 20px;
+  }
+
+  .header-comp.home-route .alturaa{
+    margin-bottom: 20px;
+  }
+
+
+  @media screen and (max-width: 830px) {
     .header-right {
         display: none;
     }

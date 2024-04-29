@@ -29,15 +29,15 @@
   min-height: 100vh;
 } */
 
-.App-header {
-  /* display: flex;
+/* .App-header {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin); */
+  font-size: calc(10px + 2vmin);
   color: white;
   padding: 0px 25px;
-}
+} */
 
 .App-link {
   color: #61dafb;

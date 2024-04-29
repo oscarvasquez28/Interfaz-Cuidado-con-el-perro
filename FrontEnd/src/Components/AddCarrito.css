@@ -1,0 +1,22 @@
+.add{
+    height: 100%;
+}
+
+.add-btn {
+    /* min-width: 108px; */
+    width: 100%;
+    padding: 8px 12px 6px 12px;
+    transition: background-color 0.3s ease;
+    color: white;
+    background: black;
+    font-weight: bold;
+    font-size: smaller;
+    transition: background-color 0.3s ease;
+    border: none;
+    height: 100%;
+}
+
+.add-btn:hover{
+    background: rgb(80, 80, 80);
+}
+

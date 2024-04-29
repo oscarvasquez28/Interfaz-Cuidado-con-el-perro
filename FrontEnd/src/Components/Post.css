@@ -1,31 +1,29 @@
 .Post {
-    flex-basis: calc(25% - 20px); /* Establece el ancho base del componente Post */
-    margin-bottom: 20px;
-    box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del tamaño */
-  }
-  
-  .Post-container {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .Post-img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .posts-container {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los componentes Post se envuelvan en líneas adicionales si no caben en la misma fila */
-    justify-content: space-between; /* Distribuye los componentes Post de manera uniforme en el contenedor */
-  }
-  
-  @media screen and (max-width: 768px) {
-    .Post {
-      flex-basis: calc(50% - 20px); /* Cambia el ancho del componente Post cuando la pantalla es más pequeña */
-    }
-  }
-  
+  width: 100%; /* Ocupar todo el ancho disponible en la columna */
+}
+
+.Post-container {
+  height: 100%; /* Ocupar toda la altura del contenedor */
+  width: 40vh; /* Ancho del contenedor */
+  display: flex; /* Utilizar flexbox para alinear los elementos verticalmente */
+  flex-direction: column; /* Apilar los elementos verticalmente */
+}
+
+.btn-inline {
+  margin-top: auto; /* Mover los botones hacia la parte inferior */
+}
+
+.posts-container {
+  display: grid; /* Utilizar grid para los posts */
+  grid-template-columns: repeat(auto-fill, minmax(40vh, 1fr)); /* Columnas con ancho mínimo y máximo */
+  grid-gap: 10px; /* Espacio entre los posts */
+}
+
+.Post-img {
+  width: 100%; /* Ajustar la imagen al ancho del contenedor */
+  margin-bottom: 10px;
+}
+
+.btn-inline-right{
+  padding-top: 10px;
+}

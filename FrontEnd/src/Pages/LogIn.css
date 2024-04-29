@@ -1,0 +1,211 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.LogIn-container{
+  height: 90vh;
+}
+
+.general{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  margin: 3% 15%;
+
+}
+
+.general-title{
+  text-align: left;
+}
+
+.both-sides{
+  display: flex;
+  flex-direction: row;
+  /* margin: 7% 0px; */
+  margin-top: calc(70px + 2%);
+  align-items: center;
+  height: calc(100vh - (70px + 2%));
+}
+
+.left-side{
+  border-right: solid;
+  border-color: black;
+  border-width: 1px;
+  width: 100%;
+  height: 75%;
+  padding: 0px 5vh;
+  
+}
+
+.right-side{
+  text-align: left;
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 100%;
+  height: 75%;
+}
+
+.right-side-subtitle{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+
+.email {
+  position: relative;
+  margin: 11% 15%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.email-subscribe-si {
+  padding: 15px 10px;
+  border: solid;
+  font-size: 15px;
+  font-weight: bold;
+  outline: none;
+  border-width: 1px;
+  border-color: rgb(204, 204, 204);
+  margin: 8px 5px;
+  width: 90%;
+}
+
+
+
+.email-subscribe-si::placeholder {
+  color: black;
+  font-weight: bold;
+}
+
+.email-subscribe-si:focus{
+  border-color: black;
+}
+
+.email-subscribe-si:hover{
+  border-color: black;
+}
+
+
+
+.btn-unirse-si {
+  background-color: rgb(230, 230, 230);
+  border: none;
+  padding: 15px 10%;
+  color: rgb(153, 153, 153);
+  font-weight: bolder;
+  margin: 5px;
+  width: 90%;
+}
+
+.btn-create-si {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  padding: 15px 10%;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  margin: 5px;
+  width: 90%;
+
+  transition: all 0.3s ease;
+}
+
+.btn-create-si:hover{
+  opacity: .6;
+}
+
+.pass-inputs{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.pass-input{
+  position: relative;
+}
+.pass-icon{
+  position: absolute;
+  top: 35%;
+  right: 12%;
+  cursor: pointer;
+}
+
+.or-reset-pass{
+  color: rgb(0, 69, 255);
+  font-size: 12px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+
+
+
+@media (max-width: 800px) {
+  .both-sides {
+    flex-direction: column;
+  }
+ 
+  .left-side{
+    border-right: none;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 98%;
+    margin: 0px 15px;
+    padding: 0;
+    text-align: center;
+  }
+  .pass-icon{
+    right: 10%;
+  }
+
+  .both-sides {
+    flex-direction: column;
+  }
+  .right-side{
+    text-align: left;
+    padding-left: 10%;
+    padding-top: 20px;
+    width: 98%;
+  }
+
+  .pass-inputs {
+    flex-direction: column;
+  }
+  .pass-icon{
+    right: 15%;
+  }
+  
+ .email-subscribe-si{
+    width: 90%;
+  }
+
+  .btn-unirse-si{
+    width: 90%;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .both-sides {
+    flex-direction: column;
+  }
+
+  .pass-inputs {
+    flex-direction: column;
+  }
+  .pass-icon{
+    right: 15%;
+  }
+  
+  .eemail-subscribe-si{
+    width: 90%;
+  }
+
+}

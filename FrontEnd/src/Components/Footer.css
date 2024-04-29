@@ -26,11 +26,13 @@ body {
     margin: 5px 5px;
     padding: 20px 16px; /* Ajuste de padding */
     flex-basis: calc(30% - 20px); /* Flex basis del 30% */
+    filter: brightness(115%); /* Aumenta el brillo al 150% */
 }
 
-.title {
+.contenedor-footer-title{
     font-weight: 700;
-    margin: 15px 5px;
+    font-size: 22px;
+    /* margin: 15px 5px; */
 }
 
 .links {
@@ -121,6 +123,7 @@ form .contenedor-footer {
     margin: 0px 5px;
     border-width: 2px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .SM-logo:hover {

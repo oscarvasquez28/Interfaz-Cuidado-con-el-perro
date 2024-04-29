@@ -1,0 +1,143 @@
+
+
+.co-down{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.co-Left{
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.inpuut{
+  border-color: rgb(204, 204, 204);
+  border-width: 1px;
+  margin: 3px;
+  padding: 15px 10px;
+  font-size: 20px;
+  font-weight: 500;
+  border-style: solid;
+}
+
+.inpuut:focus{
+  border-color: black;
+  border-width: 1px;
+}
+
+.inpuut:hover{
+  border-color: black;
+}
+
+
+.inpuut::placeholder{
+  color: black;
+  border-radius: 1px;
+  margin: 3px;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.elem-1{
+  grid-column: 1/4;
+}
+.elem-2{
+  grid-column: 4/7;
+}
+.elem-3{
+  grid-column: 1/5;
+}
+.elem-4{
+  grid-column: 5/7;
+}
+.elem-5{
+  grid-column: 4/5;
+}
+.elem-6{
+  grid-column: 5/7;
+}
+
+.co-right{
+  display: flex;
+  flex-direction: column;
+  width:50%;
+  align-items: end;
+  justify-content: center;
+}
+
+.pedido{
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 15px 20px;
+  margin-right: 100px;
+}
+
+.rows-pedido{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.techo{
+  border-top: 1px solid black;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.techo p{
+  margin-top: 20px;
+}
+
+.techo b{
+  font-size: xx-large;
+}
+
+
+.suscribir{
+  display: flex;
+  flex-direction: row;
+  align-items:baseline;
+  margin: 30px 0px;
+}
+
+.suscribir p{
+  margin: 0px 5px;
+  font-weight: 500;
+}
+
+.btn-Continuar{
+  background-color: rgb(230, 230, 230);
+  border: none;
+  padding: 15px 10%;
+  color: rgb(153, 153, 153);
+  font-weight: bolder;
+  width: 50%;
+}
+
+.btn-Continuar-si {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  padding: 15px 10%;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  margin: 5px;
+  width: 100%;
+
+  transition: all 0.3s ease;
+}
+
+.btn-create-si:hover{
+  opacity: .6;
+}

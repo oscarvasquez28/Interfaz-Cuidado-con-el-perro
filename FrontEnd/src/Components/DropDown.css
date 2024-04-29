@@ -1,0 +1,85 @@
+
+.dd-Dropdown_container{
+  background-color: rgb(240, 240, 240);
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dd-dropdown__list{
+  list-style: none;
+}
+
+.dd-dropdown__link{
+  color: rgb(184, 187, 191);
+  padding: 1em 1.2em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  position: relative;
+  background-color: var(--bg, transparent);
+  border-radius: 6px;
+  text-align: left;
+  justify-content: center;
+
+}
+
+.dd-dropdown__list:has( :checked ){
+  --rows: 1fr;
+  --rotate: rotate(180deg);
+}
+
+.dd-dropdown__check{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;  
+}
+
+.dd-dropdown__arrow{
+  color: black;
+  margin-left: auto;
+  transform: var(--rotate, 0);
+  transition: .2s transform;
+}
+
+.dd-dropdown__content{
+  display: grid;
+  grid-template-rows: var(--rows, 0fr);
+  transition: .3s grid-template-rows;
+  width: 100%;
+  padding-right: 15px;
+  
+}
+
+.dd-dropdown__sub{
+  overflow: hidden;
+
+}
+
+.dd-dropdown__li{
+  width: 100%;
+  list-style: none;
+  margin-left: auto;
+  text-align: left;
+}
+
+
+.dd-text-tile{
+  color: black;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.dd-dropdown__div{
+  display: flex;
+  flex-direction: row;
+}
+
+a:hover{
+  text-decoration: none;
+}

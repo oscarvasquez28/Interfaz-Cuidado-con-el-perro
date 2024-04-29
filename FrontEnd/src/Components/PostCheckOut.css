@@ -1,0 +1,229 @@
+.pco-Post {
+  /* Establece el ancho base del componente Post */
+ flex-basis: calc(90%);
+ margin-bottom: 40px;
+ box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del tamaño */
+ display: flex;
+ flex-direction: row;
+ border-bottom: 1px solid black;
+ position: relative;
+
+}
+
+
+
+/* .Post-container{
+ margin-right: 10px;
+}
+  */
+.pco-posts-container {
+ /* background-color: #f9f9f9; */
+ padding: 20px;
+ border-radius: 5px;
+ text-align:center;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+
+}
+
+.pco-Data-container{ 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0px 10px 20px 10px;
+  
+}
+
+.pco-datos-Articulo{
+  max-width: 300px;
+  width: 80%;
+  height: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow:visible;
+}
+
+
+.pco-datos-Articulo p{
+  margin: 3px;
+  
+}
+ 
+.pco-Post-img {
+ /* width: 12vh; */
+ width: 15vh;
+ height: 95%;
+ min-height: 15vh;
+ margin-bottom: 20px;
+ border-radius: 12px;
+ transition: transform 0.3s ease; 
+
+}
+.pco-Post p{
+ /* font-size: 12px; */
+ white-space: nowrap;
+}
+
+.pco-Post-img:hover{
+ transform: scale(0.99);
+}
+ 
+.pco-posts-container {
+ display: flex;
+ /*flex-wrap: wrap; /* Permite que los componentes Post se envuelvan en líneas adicionales si no caben en la misma fila */
+ justify-content: space-between; /* Distribuye los componentes Post de manera uniforme en el contenedor */
+}
+
+ 
+.pco-Precio-bold{
+ font-weight: bolder;
+}
+
+.pco-price{
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+}
+
+.pco-novedad{
+  margin: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(57, 209, 109);
+  padding: 3px 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.pco-btn-inline{
+ display: flex;
+ justify-content: space-between; /* Espacio entre los botones */
+}
+
+
+.btn-Continuar {
+  background-color: rgb(230, 230, 230);
+  border: none;
+  padding: 15px 10%;
+  color: rgb(153, 153, 153);
+  font-weight: bolder;
+  margin: 5px;
+  width: 40%;
+}
+
+/* .btn-inline div{
+ flex-basis: calc(49% );
+ text-align: right;
+ width: 100%;
+
+} */
+
+.pco-btn-inline-right{
+ flex-basis: calc(49% );
+ /* text-align: right; */
+ width: 100%;
+}
+
+.pco-btn-inline-left{
+ flex-basis: calc(19% );
+ /* text-align: right; */
+ width: 100%;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
+.pco-iconoTrash{
+  margin: 5px;
+  font-size: 23px;
+}
+
+.nombre-articulo{
+  width: 80%;
+  white-space: normal;
+}
+
+
+.nombre-articulo P{
+ /* Hace que se divida la linea del p cuando se hace overflow de su div*/
+  white-space: normal;
+  font-weight: 600;
+}
+
+
+
+@media screen and (max-width: 830px) {
+ .pco-Post {
+   /* Cambia el ancho del componente Post cuando la pantalla es más pequeña */
+   /* flex-basis: calc(50% - 20px);  */
+   width: 50%;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .pco-Post p{
+   /* font-size: 12px; */
+   white-space: nowrap;
+ }
+ .pco-posts-container {
+   /* display: flex; */
+   display: inline;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .pco-Post-img {
+   width:100%;
+   height:80vh;
+   /* height: 100%; */
+ }
+
+ .pco-btn-inline .btn-inline-right{
+   margin-top: 10px;
+ }
+
+}
+
+@media screen and (min-width: 830px) and (max-width: 950px) {
+ .pco-Post-img {
+   width: 340px;
+   height: 65vh;
+ }
+}
+
+@media screen and (max-width: 1230px) {
+ .pco-btn-inline{
+   display: inline;
+   justify-content: space-between; /* Espacio entre los botones */
+ }
+
+ .pco-btn-inline-right{
+   margin-top: 5px;
+   width: 100%;
+ }
+
+ .pco-posts-container {
+   /* display: flex; */
+   justify-content:space-around; /* Distribuye los componentes Post de manera uniforme en el contenedor */
+   
+ }
+
+ .pco-Post{
+   flex-basis: calc(40%);
+ }
+
+ .pco-Post p{
+   white-space: nowrap;
+ }
+
+
+
+}
