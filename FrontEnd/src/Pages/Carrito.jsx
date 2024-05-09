@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 import PlayeraGris from '../Images/Ropa/Hombre/vegeta.jpg';
 import PlayeraGris2 from '../Images/Ropa/Hombre/playera-gris-2.jpg'
@@ -12,10 +13,37 @@ import '../Pages/Carrito.css';
 
 
 function Carrito() {
-  // const handleClick = () => {
-  //   // Abrir una nueva ventana con la URL deseada
-  //   window.open('/CheckOut', '_blank');
-  // };
+
+  const { id } = useParams();
+  const [carritos, setCarritos] = useState([]);
+  let totalparcial = 0;
+  let totalfinal = 0;
+  let CostoEnvio = 'Gratis';
+
+  for (let carrito of carritos) {
+    totalparcial += parseFloat(carrito.precio);
+  }
+
+  if(totalparcial >= 599){
+    CostoEnvio = 'Gratis';
+    totalfinal = totalparcial;
+  }else{
+    if(carritos.length>0)
+      {
+        CostoEnvio = '$65'
+        totalfinal = totalparcial + 65;
+      }
+  }
+
+
+  useEffect(() => {
+      axios.get(`http://localhost:8081/LeerCarrito/${id}`)
+          .then(res => {
+              console.log(res);
+              setCarritos(res.data); // Se asigna la lista completa de carritos
+          })
+          .catch(err => console.log(err));
+  }, [id]);
 
   return (
     <div className='all-container'>
@@ -26,7 +54,7 @@ function Carrito() {
         <div>
           <p className='title-muted'> FAVORITOS (0) </p>
           
-          <p className='title'> CARRITO (2)</p>
+          <p className='title'> CARRITO ({carritos.length})</p>
         </div>
 
       </div>
@@ -35,29 +63,20 @@ function Carrito() {
 
         <div className='left'>
           <div className="c-posts-container">
-            <PostCarrito
-              image={PlayeraGris}
-              articulo='Camisa Manga larga Oxford Tipo Lino'
-              precio='150'
-              color='NEGRO'
-              talla='CH'
-            />
-
-            {/* <PostCarrito
-              image={'https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_7374.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} imagenHover={'https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_7361.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'}
-              articulo='Mujer-Container-Dashboard-Posts'
-              precio='279'
-              color='BLANCO'
-              talla='G'
-            />  */}
-
-            <PostCarrito
-              image={PlayeraGris2}
-              articulo='Playera Rayas Gris Perro'
-              precio='150'
-              color='GRIS'
-              talla='G'
-            /> 
+          {carritos.map(carrito => (
+                        <div key={carrito.usuario_id}>
+                          <PostCarrito
+                            image={carrito.imagen}
+                            articulo={carrito.articulo}
+                            precio={carrito.precio}
+                            color={carrito.color}
+                            talla={carrito.talla}
+                          />
+                          <hr /> {/* Línea divisoria entre cada carrito */}
+                        </div>
+                        
+                    ))
+            }
 
             <div className='Precio-bold'>
               AÑADIR CÓDIGO DE DESCUENTO  +
@@ -74,22 +93,22 @@ function Carrito() {
           <div className='resumen'>
             <div className='rows-resumen'>
               <p className='Precio-bold'>RESUMEN DE COMPRA</p>
-              <p> 2 Productos</p>
+              <p> {carritos.length} Productos</p>
             </div>
 
             <div className='rows-resumen' >
               <p>Total parcial</p>
-              <p>$300.00</p>
+              <p>${totalparcial.toFixed(2)}</p>
             </div>
 
             <div className='rows-resumen'>
               <p>Estimado de envio</p>
-              <p>Gratis</p>
+              <p>{CostoEnvio}</p>
             </div>
 
             <div className='rows-resumen total'>
               <p>Total</p>
-              <p className='Precio-bold'>$300.00</p>
+              <p className='Precio-bold'>${totalfinal.toFixed(2)}</p>
             </div>
 
 
