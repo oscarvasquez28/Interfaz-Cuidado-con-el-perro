@@ -30,15 +30,19 @@ function Hombre() {
               <span><h2 className='Container-Dashboard-Subtitle-h2'>VENDIDOS DE HOMBRE</h2></span>
             </div>
             <div className="Mujer-Container-Dashboard-Posts">
-              <Post imagen={'https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_7374.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} imagenHover={'https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_7361.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} 
+              <Post imagen={'https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_7374.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} 
+              imagenHover={'https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_7361.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} 
               articulo="Camisa Botones Contraste" 
               precio={279.00} color="BLANCO" />
-              <Post imagen={'https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_7376.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} imagenHover={'https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_7363.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} 
+              <Post imagen={'https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_7376.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} 
+              imagenHover={'https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_7363.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} 
               articulo="Playera Estampado Tropical" 
               precio={129.00} color="ESTAMPADOS" />
-              <Post imagen={'https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_7234.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} imagenHover={'https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_7217.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} 
+              <Post imagen={'https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_7234.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'}
+              imagenHover={'https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_7217.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} 
               articulo="Playera Hombros Tejidos" precio={299.00} color="VERDES" />
-              <Post imagen={'https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_7359.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} imagenHover={'https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_7346.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} 
+              <Post imagen={'https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_7359.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} 
+              imagenHover={'https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_7346.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} 
               articulo="Jogger Cargo Estampado Calavera" 
                precio={369.00} color="NEGROS" />
             </div>
