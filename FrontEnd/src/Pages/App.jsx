@@ -20,6 +20,7 @@ import Favoritos from './Favoritos.jsx';
 import Carrito from './Carrito.jsx'
 import CheckOut from './CheckOut.jsx';
 
+
 import { UserProvider } from '../Context/UserContext.jsx';
 
 
@@ -38,7 +39,7 @@ function App() {
           <Route path='/Hombre' element={<Hombre />} />
           <Route path='/Kids' element={<Kids />} />
           <Route path='/Favoritos' element={<Favoritos />} />
-          <Route path='/Carrito' element={<Carrito />} />
+          <Route path='/LeerCarrito/:id' element={<Carrito />} />
           <Route path='/CheckOut' element={<CheckOut />} />
 
       </Routes>
