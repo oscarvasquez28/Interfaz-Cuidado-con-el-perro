@@ -142,6 +142,15 @@
   font-weight: bold;
 }
 
+.btn-unirse-si{
+  transition: 0.2s ease-in-out;
+}
+
+.btn-unirse-si:hover{
+  background: black;
+  color: white;
+}
+
 
 
 

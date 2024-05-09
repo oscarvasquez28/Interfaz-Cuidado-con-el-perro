@@ -34,6 +34,15 @@
 }
 
 .btn-unirse-li{
+  transition: 0.2s ease-in-out;
+}
+
+.btn-unirse-li:hover{
+  background: black;
+  color: white;
+}
+
+.btn-unirse-li{
   width: 45%;
 }
 

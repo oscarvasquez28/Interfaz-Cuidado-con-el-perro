@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react';
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './SignIn.css';
 import Header from '../Components/Header';
@@ -8,7 +8,7 @@ import Footer from '../Components/Footer';
 import UserContext from '../Context/UserContext'; // Importa el contexto
 
 function SignIn() {
-  const { setUsername } = useContext(UserContext);
+  const { setUser } = useContext(UserContext); // Cambia setUsername a setUser
   const [showPass, setShowPass] = useState(false);
   const [values, setValues] = useState({
     correo: '',
@@ -20,7 +20,9 @@ function SignIn() {
     const { name, value } = event.target;
     setValues({ ...values, [name]: value });
   };
+
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:8081/Log', values)
@@ -30,8 +32,9 @@ function SignIn() {
         if (res.data.length > 0) {
           // Si se encontró al usuario, redirigir al dashboard u otra página
           console.log(res.data[0].nombre);
+          const userId = res.data[0].id; // Añadir la obtención del ID
           const username = res.data[0].nombre;
-          setUsername(username); 
+          setUser(userId, username); // Establecer tanto el ID como el nombre de usuario
           alert(`Bienvenido, ${username}!`);
           navigate('/');
         } else {

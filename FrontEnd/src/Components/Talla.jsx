@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './Talla.css'
 
-function Talla() {
+const Talla = ({ onTallaSeleccionada }) => {
   const [botonSeleccionado, setBotonSeleccionado] = useState("Talla");
 
   const handleClick = (valor) => {
     setBotonSeleccionado(valor);
+    // Llama a la función de devolución de llamada con el valor seleccionado
+    onTallaSeleccionada(valor);
   };
 
   return (
