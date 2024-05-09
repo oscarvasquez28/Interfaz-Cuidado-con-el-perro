@@ -10,7 +10,9 @@ import MujerMenu from './MujerMenu';
 import KidsMenu from './KidsMenu';
 
 const Header = () => {
-  const { username } = useContext(UserContext);
+  const { userData } = useContext(UserContext); // Cambia username a userData
+  const userId = userData.id; // Obtén el ID del contexto de usuario
+  const username = userData.username;
     // Estado para controlar si se debe aplicar un fondo diferente al encabezado
     const [scrollDown, setScrollDown] = useState(false);
     const [mostrarMenuHombre, setMostrarMenuHombre] = useState(false);
