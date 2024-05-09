@@ -99,7 +99,7 @@ const Header = () => {
                   <Link to="/LogIn">INICIAR SESIÓN</Link>
                 )}
                  <Link to ="/Favoritos">FAVORITOS</Link>
-                 <Link to ="/Carrito">CARRITO</Link>
+                 <Link to={`/leerCarrito/${userId}`}>CARRITO</Link>
 
             </div>
          </nav>
