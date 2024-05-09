@@ -2,6 +2,7 @@ import express from 'express';
 import mysql from 'mysql'
 import cors from 'cors'
 
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -28,6 +29,21 @@ app.post('/usuarios', (req, res) =>{
         req.body.apellido,
         req.body.correo,
         req.body.contraseña,
+    ]
+    db.query(sql, [values], (err, result) => {
+        if(err) return res.json(err);
+        return res.json(result);
+    })
+})
+
+app.post('/carrito', (req, res) =>{
+    const sql = "INSERT INTO carrito (articulo, precio, color, talla, usuario_id) VALUES (?)";
+    const values = [
+        req.body.articulo,
+        req.body.precio,
+        req.body.color,
+        req.body.talla,
+        req.body.id
     ]
     db.query(sql, [values], (err, result) => {
         if(err) return res.json(err);
