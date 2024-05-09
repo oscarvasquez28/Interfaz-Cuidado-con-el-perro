@@ -9,9 +9,14 @@
   flex-direction: column; /* Apilar los elementos verticalmente */
 }
 
+form{
+  height: 100%;
+}
+
 .btn-inline {
   margin-top: auto; /* Mover los botones hacia la parte inferior */
 }
+
 
 .posts-container {
   display: grid; /* Utilizar grid para los posts */
