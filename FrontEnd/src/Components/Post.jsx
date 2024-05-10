@@ -43,6 +43,7 @@ const Post = (props) => {
     precio: 0,
     color: '',
     talla: '',
+    comprado: 'no',
     id:0,
   });
 
