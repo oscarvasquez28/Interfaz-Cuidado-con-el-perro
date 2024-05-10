@@ -17,13 +17,12 @@
 .Edades-kids h3{
     text-align: center;
     margin-top: 10px;
-    padding: 0px 5px;
-    font-size: 23px;
+    padding: 2px 5px;
+    font-size: 21px;
     font-weight: bold;
     cursor: pointer;
     transition: ease-in-out 0.3s;
 }
-
 
 .Edades-subtitle:hover{
     background: black;
