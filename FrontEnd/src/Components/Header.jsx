@@ -82,7 +82,7 @@ const Header = () => {
                 setMostrarMenu3(false);
                 setMostrarMenuKids(false);
                 }}>
-                <Link to ="/Kids">KIDS</Link>
+                <Link to ="/Kids">NIÑOS</Link>
               </div>
               <div className='alturaa'>
                 <Link to ="/"><i className="bi bi-search"></i>BUSCAR</Link>
