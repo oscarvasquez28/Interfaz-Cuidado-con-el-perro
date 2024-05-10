@@ -1,5 +1,6 @@
-
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect,useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 import PostCheckOut from '../Components/PostCheckOut';
 import PlayeraGris from '../Images/Ropa/Hombre/vegeta.jpg';
@@ -12,6 +13,38 @@ import '../Pages/CheckOut.css';
 
 
 function CheckOut() {
+
+  const { id } = useParams();
+  const [carritos, setCarritos] = useState([]);
+  let totalparcial = 0;
+  let totalfinal = 0;
+  let CostoEnvio = 'Gratis';
+
+  for (let carrito of carritos) {
+    totalparcial += parseFloat(carrito.precio);
+  }
+
+  if(totalparcial >= 599){
+    CostoEnvio = 'Gratis';
+    totalfinal = totalparcial;
+  }else{
+    if(carritos.length>0)
+      {
+        CostoEnvio = '$65'
+        totalfinal = totalparcial + 65;
+      }
+  }
+
+  useEffect(() => {
+    axios.get(`http://localhost:8081/LeerCheckOut/${id}`)
+        .then(res => {
+            console.log(res);
+            setCarritos(res.data); // Se asigna la lista completa de carritos
+        })
+        .catch(err => console.log(err));
+}, [id]);
+
+
   //para obtener los valores de los inputs
   const [Nombre, setNombre] = useState('');
   const handleNombre = (event) => {
@@ -86,6 +119,14 @@ function CheckOut() {
     setTel(event.target.value);
   };
 
+  function handleClick() {
+    if (document.querySelector('.btn-Continuar-si')) {
+      // alert('¡Se guardó y continuó!');
+    } else if (document.querySelector('.btn-Continuar')) {
+      alert('¡Por favor complete todos los campos antes de continuar!');
+    }
+  }
+
 
 
   return (
@@ -125,13 +166,106 @@ function CheckOut() {
               <input type="checkbox" />
               <p> Quiero suscribirme al Newsletter</p>
             </div>
-            <button className={ (Nombre !== '' && Apellido !== '' && Calle !== '' && Num !== '' && CP !== '' && Region !== '' && Pais !== '' && email !== '' && Prefijo !== '' && Tel !== '') ? "btn-Continuar-si" : " btn-Continuar"}>
+            {/* <button className={ (Nombre !== '' && Apellido !== '' && Calle !== '' && Num !== '' && CP !== '' && Region !== '' && Pais !== '' && email !== '' && Prefijo !== '' && Tel !== '') ? "btn-Continuar-si" : " btn-Continuar"}>
               GUARDAR Y CONTINUAR
-              
+            </button> */}
+            {/*ventana modal*/}
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Método de Pago</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Show a second modal and hide this one with the button below.
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Continuar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Datos de la tarjeta</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <div className="rows-modals-pago">
+                    <div className="First-row-modal-pago">
+                      <div class="row">
+                        <div class="col">
+                          <input type="text" className="form-control" placeholder="Número de tarjeta de crédito" aria-label="Número de tarjeta de crédito"
+                          maxLength="16"
+                          pattern="\d*"
+                          title="Por favor ingrese solo números"
+                          onChange={(e) => {
+                            const inputValue = e.target.value.replace(/\D/g, ''); // Remover caracteres que no sean dígitos
+                            if (inputValue.length > 16) {
+                              e.target.value = inputValue.slice(0, 16); // Limitar la longitud a 16 dígitos
+                            } else {
+                              e.target.value = inputValue;
+                            }
+                          }}/>
+                        </div>
+                        <div class="col">
+                        <input type="text" className="form-control" placeholder="Titular de tarjeta" aria-label="Titular de tarjeta"
+                        onInput={(e) => {
+                          e.target.value = e.target.value.replace(/[^a-zA-Z\sÑñ]/g, '');
+                        }}/>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="Second-row-modal-pago">
+                      <div class="row">
+                        <div class="col">
+                          <input type="month" class="form-control" placeholder="Expiración (MM/AA)" aria-label="Expiración (MM/AA)"/>
+                        </div>
+                        <div class="col">
+                        <input type="number" className="form-control" placeholder="CVV" aria-label="CVV"
+                          maxLength="3"
+                          onInput={(e) => {
+                            e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,3)
+                          }}/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Pagar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* <button 
+              className={ (Nombre !== '' && Apellido !== '' && Calle !== '' && Num !== '' && CP !== '' && Region !== '' && Pais !== '' && email !== '' && Prefijo !== '' && Tel !== '') ? "btn-Continuar-si" : "btn-Continuar"} 
+              onClick={handleClick}
+              {...(Nombre !== '' && Apellido !== '' && Calle !== '' && Num !== '' && CP !== '' && Region !== '' && Pais !== '' && email !== '' && Prefijo !== '' && Tel !== '' && {'data-bs-target': '#exampleModalToggle', 'data-bs-toggle': 'modal'})}
+              >
+              GUARDAR Y CONTINUAR
+            </button> */}
+            <button 
+              className={ (Nombre !== '' && Apellido !== '' && Calle !== '' && Num !== '' && CP !== '' && Region !== '' && Pais !== '' && email !== '' && Prefijo !== '' && Tel !== '') ? "btn-Continuar-si" : "btn-Continuar"} 
+              {...(Nombre !== '' && Apellido !== '' && Calle !== '' && Num !== '' && CP !== '' && Region !== '' && Pais !== '' && email !== '' && Prefijo !== '' && Tel !== '' && {'data-bs-target': '#exampleModalToggle', 'data-bs-toggle': 'modal'})}
+              onClick={() => {
+                if (carritos.length > 0) {
+                  // Aquí colocas la lógica para guardar y continuar
+                  handleClick();
+                } else {
+                  alert("No hay productos en el carrito para comprar.");
+                }
+              }}
+            >
+              GUARDAR Y CONTINUAR
             </button>
 
             
-
           </div>
 
         </div>
@@ -143,47 +277,35 @@ function CheckOut() {
           <div className='pedido'>
             <div className='rows-pedido'>
               <h3><b>PEDIDO</b></h3>
-              <p>2 productos</p>
+              <p>{carritos.length} productos</p>
             </div>
 
             <div>
-              
-              <PostCheckOut
-               image={PlayeraGris}
-               articulo='Camisa Manga larga Oxford Tipo Lino'
-               precio='150'
-               color='Gris'
-               talla='CH'
-              />
-
-              <PostCheckOut
-              image={PlayeraGris2}
-              articulo='Camisa'
-              precio='150'
-              color='Gris'
-              talla='G'
-              />
-
-              
-              {/* <PostCheckOut
-              image={PlayeraGris2}
-              articulo='Camisa'
-              precio='150'
-              color='Gris'
-              talla='G'
-              /> */}
-              
+            {carritos.map(carrito => (
+                        <div key={carrito.usuario_id}>
+                          <PostCheckOut
+                            image={carrito.imagen}
+                            articulo={carrito.articulo}
+                            precio={carrito.precio}
+                            color={carrito.color}
+                            talla={carrito.talla}
+                          />
+                          <hr /> {/* Línea divisoria entre cada carrito */}
+                        </div>
+                        
+                    ))
+            }  
             </div>
 
 
             <div  className='rows-pedido'>
               <p>Subtotal</p>
-              <p>$300.00</p>
+              <p>${totalparcial.toFixed(2)}</p>
             </div>
 
             <div  className='rows-pedido'>
               <p>Envío (Precio estimado)</p>
-              <p>Gratis</p>
+              <p>{CostoEnvio}</p>
             </div>
 
             <div  className='rows-pedido techo'>
@@ -191,7 +313,7 @@ function CheckOut() {
                 <p>Total</p>
               </div>
               
-              <p> <b>$300.00</b> </p>
+              <p> <b>${totalfinal.toFixed(2)}</b> </p>
             </div>
 
           </div>
