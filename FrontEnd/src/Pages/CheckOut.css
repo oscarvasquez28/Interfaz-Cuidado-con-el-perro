@@ -141,3 +141,13 @@
 .btn-create-si:hover{
   opacity: .6;
 }
+
+.First-row-modal-pago{
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.Second-row-modal-pago{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
