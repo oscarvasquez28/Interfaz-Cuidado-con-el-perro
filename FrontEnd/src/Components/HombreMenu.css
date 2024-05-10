@@ -1,8 +1,9 @@
 .Container{
-    height: calc(100vh - 70px);
+    height: calc(85vh - 70px);
     display: flex;
     /* margin-top: 70px; */
     background: white;
+    border-bottom: 1px solid #000;
 }
 
 .Content {
