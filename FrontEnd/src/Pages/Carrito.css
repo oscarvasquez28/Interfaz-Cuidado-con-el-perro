@@ -41,6 +41,10 @@
   text-align: center;
 }
 
+.up a{
+  text-decoration: none;
+}
+
 .c-posts-container{
   display: flex;
   flex-direction: column;
