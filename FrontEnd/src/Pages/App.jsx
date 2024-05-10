@@ -16,9 +16,11 @@ import LogIn from './LogIn.jsx'
 import Kids from './Kids.jsx'
 import Hombre from './Hombre.jsx'
 import Mujer from './Mujer.jsx'
+import Profile from './Profile.jsx';
 import Favoritos from './Favoritos.jsx';
 import Carrito from './Carrito.jsx'
 import CheckOut from './CheckOut.jsx';
+
 
 import { UserProvider } from '../Context/UserContext.jsx';
 
@@ -38,8 +40,9 @@ function App() {
           <Route path='/Hombre' element={<Hombre />} />
           <Route path='/Kids' element={<Kids />} />
           <Route path='/Favoritos' element={<Favoritos />} />
-          <Route path='/Carrito' element={<Carrito />} />
-          <Route path='/CheckOut' element={<CheckOut />} />
+          <Route path='/Profile' element={<Profile />} />
+          <Route path='/LeerCarrito/:id' element={<Carrito />} />
+          <Route path='/LeerCheckOut/:id' element={<CheckOut />} />
 
       </Routes>
       </UserProvider>

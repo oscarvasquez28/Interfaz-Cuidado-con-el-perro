@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 import PlayeraGris from '../Images/Ropa/Hombre/vegeta.jpg';
 import PlayeraGris2 from '../Images/Ropa/Hombre/playera-gris-2.jpg'
@@ -12,10 +13,44 @@ import '../Pages/Carrito.css';
 
 
 function Carrito() {
-  // const handleClick = () => {
-  //   // Abrir una nueva ventana con la URL deseada
-  //   window.open('/CheckOut', '_blank');
-  // };
+
+  const { id } = useParams();
+  const [carritos, setCarritos] = useState([]);
+  let totalparcial = 0;
+  let totalfinal = 0;
+  let CostoEnvio = 'Gratis';
+  let Envio = 'Envío Gratuito';
+  for (let carrito of carritos) {
+    if(carrito.comprado == 'no')
+      {
+        console.log("Carrito precio:", carrito.precio);
+        totalparcial += parseFloat(carrito.precio);
+      }
+      console.log("total parcial", totalparcial);
+  }
+
+  if(totalparcial >= 599){
+    CostoEnvio = 'Gratis';
+    Envio = 'Envío Gratuito';
+    totalfinal = totalparcial;
+  }else{
+    if(carritos.length>0)
+      {
+        CostoEnvio = '$65'
+        Envio = 'Envio Gratuito a partir de 599 MXN';
+        totalfinal = totalparcial + 65;
+      }
+  }
+
+
+  useEffect(() => {
+      axios.get(`http://localhost:8081/LeerCarrito/${id}`)
+          .then(res => {
+              console.log(res);
+              setCarritos(res.data); // Se asigna la lista completa de carritos
+          })
+          .catch(err => console.log(err));
+  }, [id]);
 
   return (
     <div className='all-container'>
@@ -24,9 +59,10 @@ function Carrito() {
 
       <div className='up'>
         <div>
-          <p className='title-muted'> FAVORITOS (0) </p>
+        <Link to ="/Favoritos"><p className='title-muted'> FAVORITOS (0) </p></Link>
           
-          <p className='title'> CARRITO (2)</p>
+          
+        <p className='title'> CARRITO ({carritos.filter(carrito => carrito.comprado == 'no').length})</p>
         </div>
 
       </div>
@@ -35,29 +71,22 @@ function Carrito() {
 
         <div className='left'>
           <div className="c-posts-container">
-            <PostCarrito
-              image={PlayeraGris}
-              articulo='Camisa Manga larga Oxford Tipo Lino'
-              precio='150'
-              color='NEGRO'
-              talla='CH'
-            />
-
-            {/* <PostCarrito
-              image={'https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_7374.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'} imagenHover={'https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_7361.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'}
-              articulo='Mujer-Container-Dashboard-Posts'
-              precio='279'
-              color='BLANCO'
-              talla='G'
-            />  */}
-
-            <PostCarrito
-              image={PlayeraGris2}
-              articulo='Playera Rayas Gris Perro'
-              precio='150'
-              color='GRIS'
-              talla='G'
-            /> 
+          {carritos.filter(carrito => carrito.comprado == 'no').map(carrito => (
+                        <div key={carrito.usuario_id}>
+                          <PostCarrito
+                            id = {carrito.id}
+                            image={carrito.imagen}
+                            articulo={carrito.articulo}
+                            precio={carrito.precio}
+                            color={carrito.color}
+                            talla={carrito.talla}
+                          />
+                          <hr /> {/* Línea divisoria entre cada carrito */}
+                          {/* <p>{carrito.id}</p> */}
+                        </div>
+                        
+                    ))
+            }
 
             <div className='Precio-bold'>
               AÑADIR CÓDIGO DE DESCUENTO  +
@@ -74,33 +103,42 @@ function Carrito() {
           <div className='resumen'>
             <div className='rows-resumen'>
               <p className='Precio-bold'>RESUMEN DE COMPRA</p>
-              <p> 2 Productos</p>
+              <p> {carritos.filter(carrito => carrito.comprado == 'no').length} Productos</p>
             </div>
 
             <div className='rows-resumen' >
               <p>Total parcial</p>
-              <p>$300.00</p>
+              <p>${totalparcial.toFixed(2)}</p>
             </div>
 
             <div className='rows-resumen'>
               <p>Estimado de envio</p>
-              <p>Gratis</p>
+              <p>{CostoEnvio}</p>
             </div>
 
             <div className='rows-resumen total'>
               <p>Total</p>
-              <p className='Precio-bold'>$300.00</p>
+              <p className='Precio-bold'>${totalfinal.toFixed(2)}</p>
             </div>
 
 
             <br/><br/><br/>
 
             <div className='rows-resumen'>
-              <p>Envio gratuito</p>
+              <p>{Envio}</p>
              
             </div>
-            <Link to ="/CheckOut"><button className='botonPagar'
-            // onClick={handleClick}
+            <Link to ={`/LeerCheckOut/${id}`}>
+              <button className="botonPagar"
+              onClick={(e) => {
+                if (carritos.length === 0) {
+                  e.preventDefault(); // Evita que el enlace se active si el carrito está vacío
+                  alert("No hay productos en el carrito para pagar.");
+                } else {
+                  // Aquí se podría agregar lógica adicional antes de dirigir al usuario a la página de pago
+                }
+              }}
+              // className='botonPagar'
             >
              IR A PAGAR
             </button></Link>

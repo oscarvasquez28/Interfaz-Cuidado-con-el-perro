@@ -38,10 +38,12 @@ const Post = (props) => {
 
   // Estado para almacenar los valores
   const [values, setValues] = useState({
+    imagen: '',
     articulo: '',
     precio: 0,
     color: '',
     talla: '',
+    comprado: 'no',
     id:0,
   });
 
@@ -49,13 +51,14 @@ const Post = (props) => {
   useEffect(() => {
     setValues(prevValues => ({
       ...prevValues,
+      imagen,
       articulo,
       precio,
       color,
       talla: tallaSeleccionada,
       id: userIdInt,
     }));
-  }, [articulo, precio, color, tallaSeleccionada]);
+  }, [imagen, articulo, precio, color, tallaSeleccionada]);
 
       const navigate = useNavigate();
 

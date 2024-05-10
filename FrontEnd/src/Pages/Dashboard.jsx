@@ -42,15 +42,33 @@ function Dashboard() {
         <h3 className='Novedades'>NOVEDADES</h3> 
         {/* hay que darle un estilo a esto */}
         <div className="posts-container">
-          <Post imagen={PlayeraGris} imagenHover={PlayeraGris2} articulo="Playera Rayas Gris Perro" precio={139.00} color="GRIS"/>
-          <Post imagen={acdc} imagenHover={acdc2} articulo="Playera Manga Corta Básica Estampado AC/DC" precio={149.00} color="GRIS"/>
-          <Post imagen={pokemon} imagenHover={pokemon2} articulo="Playera Manga Corta Pokemon" precio={89.90} color="ESTAMPADO"/>
-          <Post imagen={CuelloResort} imagenHover={CuelloResort2} articulo="Camisa Cuello Resort Tela con Textura" precio={269.00} color="BLANCO"/>
-          <Post imagen={Esponja} imagenHover={Esponja2} articulo="Playera Manga Larga Estampado Bob Esponja" precio={199.00} color="MULTICOLOR"/>
-          <Post imagen={Goku} imagenHover={Goku2} articulo="Playera Estampado Licencia" precio={89.90} color="ESTAMPADO"/>
-          <Post imagen={Vegeta} imagenHover={Vegeta2} articulo="Playera Vegeta Saiyan" precio={159.00} color="NEGRO"/>
-          <Post imagen={Estampado} imagenHover={Estampado2} articulo="Playera Básica Estampado Dibujos" precio={109.00} color="BLANCO"/>
-          <Post imagen={Smile} imagenHover={Smile2} articulo="Playera Manga Corta Estampada" precio={89.00} color="ESTAMPADO"/>
+          <Post imagen='https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_8466.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          imagenHover='https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_8429.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          articulo="Sudadera Jujutsu kaisen" precio={369.00} color="NEGRO"/>
+          <Post imagen='https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_8280.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          imagenHover='https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_8243.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          articulo="Sudadera con franja en contraste" precio={279.00} color="NEGRO"/>
+          <Post imagen='https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_8668.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          imagenHover='https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_8631.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          articulo="Jogger estampado" precio={229.00} color="NEGRO"/>
+          <Post imagen='https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_8465.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          imagenHover='https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_8428.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          articulo="Sudadera Luffy" precio={369.00} color="BLANCO"/>
+          <Post imagen='https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_8277.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          imagenHover='https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_8240.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          articulo="Top sin mangas" precio={149.00} color="NEGRO"/>
+          <Post imagen='https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_8669.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          imagenHover='https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_8632.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          articulo="Conjunto Manga Corta" precio={229.00} color="MULTICOLOR"/>
+          <Post imagen='https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_8361.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          imagenHover='https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_8324.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          articulo="Playera Jujustu Kaisen Chibbi" precio={159.00} color="MORADO"/>
+          <Post imagen='https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_8281.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          imagenHover='https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_8244.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          articulo="Sudadera con cierre al frente" precio={279.00} color="BLANCO"/>
+          <Post imagen='https://app.cuidadoconelperro.com.mx/media/catalog/product/1/_/1_555_1.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          imagenHover='https://app.cuidadoconelperro.com.mx/media/catalog/product/2/_/2_554_1.jpg?width=1920&optimize=low&bg-color=255,255,255&fit=bounds'
+          articulo="Playera Estampado Digimon" precio={129.00} color="ESTAMPADO"/>
 
         </div>
       </div>
