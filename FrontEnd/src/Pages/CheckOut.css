@@ -151,3 +151,52 @@
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+
+.modal-body-container-row{
+  margin: 15px 10px;
+}
+
+.modal-body-container-row p{
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.modal-body-container-row button{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid gray;
+  background: white;
+}
+
+.modal-body-first-column{
+  margin: 0px 30px;
+}
+
+
+/* .modal-body-second-column{
+  margin: 0px 30px;
+} */
+
+.modal-body-image{
+  max-height: 30px;
+  margin-right: 10px;
+}
+
+.modal-body-container-row button{
+  transition: ease-in-out 0.2s;
+}
+
+.modal-metodo-pago-button-1:hover,
+.modal-metodo-pago-button-1.active {
+  transform: scale(101%);
+  filter: brightness(90%);
+}
+
+.modal-metodo-pago-button-2:hover,
+.modal-metodo-pago-button-2.active {
+  transform: scale(101%);
+  filter: brightness(90%);
+}
