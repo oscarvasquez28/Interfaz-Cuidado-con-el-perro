@@ -37,12 +37,14 @@ app.post('/usuarios', (req, res) =>{
 })
 
 app.post('/carrito', (req, res) =>{
-    const sql = "INSERT INTO carrito (articulo, precio, color, talla, usuario_id) VALUES (?)";
+    const sql = "INSERT INTO carrito (imagen, articulo, precio, color, talla, comprado, usuario_id) VALUES (?)";
     const values = [
+        req.body.imagen,
         req.body.articulo,
         req.body.precio,
         req.body.color,
         req.body.talla,
+        req.body.comprado,
         req.body.id
     ]
     db.query(sql, [values], (err, result) => {
@@ -85,6 +87,23 @@ app.post('/Log', (req, res) => {
     });
 });
 
+app.get('/LeerCarrito/:id', (req, res) => {
+    const sql = "SELECT * FROM carrito WHERE usuario_id = ? ";
+    const id = req.params.id;
+    db.query(sql, [id], (err, result) => {
+        if(err) return res.json({Message: "Error inside server"});
+        return res.json(result);
+    })
+})
+
+app.get('/LeerCheckOut/:id', (req, res) => {
+    const sql = "SELECT * FROM carrito WHERE usuario_id = ?";
+    const id = req.params.id;
+    db.query(sql, [id], (err, result) => {
+        if(err) return res.json({Message: "Error inside server"});
+        return res.json(result);
+    })
+})
 
 
 app.get('/read/:id', (req, res) => {
@@ -95,6 +114,28 @@ app.get('/read/:id', (req, res) => {
         return res.json(result);
     })
 })
+
+app.delete('/delete', (req, res) => {
+    // Obtiene el ID del artículo a eliminar del parámetro de consulta
+    const id = req.query.id;
+    db.query('DELETE FROM carrito WHERE id = ?', [id], (err, result) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ message: 'Error interno del servidor' });
+        }
+        // Si la eliminación se realizó con éxito, envía una respuesta de éxito
+        return res.status(200).json({ message: 'Artículo eliminado del carrito con éxito' });
+    });
+});
+
+// app.delete('/delete', (req, res) => {
+//     const sql = "DELETE FROM carritos WHERE id = ?";
+//     const id = req.params.id;
+//     db.query(sql, [id], (err, result) => {
+//         if(err) return res.json({Message: "Error inside server"});
+//         return res.json(result);
+//     })
+// })
 
 app.delete('/delete/:id', (req, res) => {
     const sql = "DELETE FROM usuarios WHERE ID = ?";
