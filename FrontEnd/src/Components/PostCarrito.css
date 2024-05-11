@@ -128,6 +128,10 @@
   font-size: 23px;
 }
 
+.pc-btn-inline-left i{
+  color: black;
+}
+
 
 
 @media screen and (max-width: 830px) {
