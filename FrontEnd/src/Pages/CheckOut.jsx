@@ -21,7 +21,9 @@ function CheckOut() {
   let CostoEnvio = 'Gratis';
 
   for (let carrito of carritos) {
-    totalparcial += parseFloat(carrito.precio);
+    if (carrito.comprado === 'no') {
+      totalparcial += parseFloat(carrito.precio);
+    }
   }
 
   if(totalparcial >= 599){
@@ -132,6 +134,20 @@ function CheckOut() {
   const handleClick2 = (button) => {
     setActiveButton(button);
   };
+
+  const handleUpdate = () => {
+    axios.post('http://localhost:8081/UpdateCheckOut', { id: id })
+        .then(response => {
+            console.log(response);
+            alert("Los artículos fueron comprados");
+            alert(id);
+            // Realiza alguna acción adicional si es necesario
+        })
+        .catch(error => {
+            console.error(error);
+            alert("Hubo un error al intentar comprar los artículos");
+        });
+};
 
   
   return (
@@ -270,7 +286,10 @@ function CheckOut() {
                   </div>
                   </div>
                   <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Pagar</button>
+                  <Link to ="/">
+                  <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" onClick={handleUpdate}>Pagar</button>
+                  </Link>
+                    
                   </div>
                 </div>
               </div>
@@ -310,11 +329,11 @@ function CheckOut() {
           <div className='pedido'>
             <div className='rows-pedido'>
               <h3><b>PEDIDO</b></h3>
-              <p>{carritos.length} productos</p>
+              <p>{carritos.filter(carrito => carrito.comprado === 'no').length} productos</p>
             </div>
 
             <div>
-            {carritos.map(carrito => (
+            {carritos.filter(carrito => carrito.comprado == 'no').map(carrito => (
                         <div key={carrito.usuario_id}>
                           <PostCheckOut
                             image={carrito.imagen}

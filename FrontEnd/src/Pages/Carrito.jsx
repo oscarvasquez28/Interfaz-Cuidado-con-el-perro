@@ -128,17 +128,18 @@ function Carrito() {
               <p>{Envio}</p>
              
             </div>
-            <Link to ={`/LeerCheckOut/${id}`}>
-              <button className="botonPagar"
+            <Link to={`/LeerCheckOut/${id}`}>
+            <button
+              className="botonPagar"
               onClick={(e) => {
-                if (carritos.length === 0) {
-                  e.preventDefault(); // Evita que el enlace se active si el carrito está vacío
-                  alert("No hay productos en el carrito para pagar.");
+                const carritosNoComprados = carritos.filter(carrito => carrito.comprado === 'no');
+                if (carritosNoComprados.length === 0) {
+                  e.preventDefault(); // Evita que el enlace se active si no hay productos no comprados en el carrito
+                  alert("No hay productos por pagar");
                 } else {
                   // Aquí se podría agregar lógica adicional antes de dirigir al usuario a la página de pago
                 }
               }}
-              // className='botonPagar'
             >
              IR A PAGAR
             </button></Link>
