@@ -80,7 +80,7 @@ const Post = (props) => {
                 axios.post('http://localhost:8081/carrito' , values)
                   .then(res => {
                       console.log(res);
-                      navigate('/')
+                    //   navigate('/')
                       alert("El artículo fue añadido al carrito");
                   })
                   .catch(err => console.log(err))
