@@ -36,6 +36,15 @@ app.post('/usuarios', (req, res) =>{
     })
 })
 
+app.post('/UpdateCheckOut', (req, res) => {
+    const sql = "UPDATE carrito SET comprado = 'si' WHERE comprado = 'no' AND usuario_id = ?";
+    const id = req.body.id; // Obtener el id del cuerpo de la solicitud
+    db.query(sql, [id], (err, result) => {
+        if(err) return res.json(err);
+        return res.json(result);
+    });
+});
+
 app.post('/carrito', (req, res) =>{
     const sql = "INSERT INTO carrito (imagen, articulo, precio, color, talla, comprado, usuario_id) VALUES (?)";
     const values = [
