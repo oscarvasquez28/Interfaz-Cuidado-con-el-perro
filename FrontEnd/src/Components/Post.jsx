@@ -70,12 +70,21 @@ const Post = (props) => {
         //   alert("Las contraseñas no coinciden");
         //   return;
         // }
-        if(!userId){
-            alert("Inicia sesión para añadir al carrito");
-        }else{
-            if(!tallaSeleccionada){
-                alert("Selecciona una talla");
+        if(!tallaSeleccionada)
+            {
+            alert("Selecciona una talla");
             }else{
+                if(userId == 1){
+                    alert("Eres el cliente 1");
+                    axios.post('http://localhost:8081/carrito' , values)
+                    .then(res => {
+                        console.log(res);
+                      //   navigate('/')
+                        alert("El artículo fue añadido al carrito");
+                    })
+                    .catch(err => console.log(err))
+                }
+                if(userId>1){
                 // Si las contraseñas coinciden, puedes continuar con tu lógica de envío de formulario
                 axios.post('http://localhost:8081/carrito' , values)
                   .then(res => {
@@ -84,11 +93,9 @@ const Post = (props) => {
                       alert("El artículo fue añadido al carrito");
                   })
                   .catch(err => console.log(err))
+                }
             }
         }
-        
-
-      };
 
     return (
         <div className="Post">
