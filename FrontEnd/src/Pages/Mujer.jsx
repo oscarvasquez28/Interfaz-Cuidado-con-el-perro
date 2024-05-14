@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import './Mujer.css';
 import Header from '../Components/Header';
 import Post from '../Components/Post';
+import Footer from '../Components/Footer'
 import acdc from '../Images/Ropa/Mujer/acdc-mujer.jpg';
 import acdc2 from '../Images/Ropa/Mujer/acdc-mujer2.jpg';
 
@@ -113,6 +114,7 @@ function Mujer() {
               <Post imagen={acdc} imagenHover={acdc2} articulo="Playera Manga Corta Básica Estampado AC/DC" precio={149.00} color="GRIS" />
             </div>
       </div>
+      <Footer/>
     </div>
   );
 }
