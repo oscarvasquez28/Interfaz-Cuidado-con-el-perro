@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import PlayeraGris from '../Images/Ropa/Hombre/vegeta.jpg';
 import PlayeraGris2 from '../Images/Ropa/Hombre/playera-gris-2.jpg'
@@ -13,7 +13,7 @@ import '../Pages/Carrito.css';
 
 
 function Carrito() {
-
+  const navigate = useNavigate();
   const { id } = useParams();
   const [carritos, setCarritos] = useState([]);
   let totalparcial = 0;
@@ -128,21 +128,38 @@ function Carrito() {
               <p>{Envio}</p>
              
             </div>
-            <Link to={`/LeerCheckOut/${id}`}>
+            {/* <Link to={`/LeerCheckOut/${id}`}> */}
             <button
               className="botonPagar"
               onClick={(e) => {
                 const carritosNoComprados = carritos.filter(carrito => carrito.comprado === 'no');
-                if (carritosNoComprados.length === 0) {
-                  e.preventDefault(); // Evita que el enlace se active si no hay productos no comprados en el carrito
-                  alert("No hay productos por pagar");
-                } else {
-                  // Aquí se podría agregar lógica adicional antes de dirigir al usuario a la página de pago
+                if(id == 1){
+                  if (carritosNoComprados.length === 0) {
+                    e.preventDefault(); // Evita que el enlace se active si no hay productos no comprados en el carrito
+                    alert("No hay productos por pagar");
+                  } else {
+  
+                    alert("Inicie sesión");
+                    navigate(`/LogIn`);
+                  }
+                 
+                }else{
+                  if (carritosNoComprados.length === 0) {
+                    e.preventDefault(); // Evita que el enlace se active si no hay productos no comprados en el carrito
+                    alert("No hay productos por pagar");
+                  } else {
+  
+                    alert("Proceda con el pago");
+                    navigate(`/LeerCheckOut/${id}`);
+
+                  }
                 }
+
               }}
             >
              IR A PAGAR
-            </button></Link>
+            </button>
+            {/* </Link> */}
 
 
           </div>
