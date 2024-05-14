@@ -44,7 +44,7 @@ function CheckOut() {
             setCarritos(res.data); // Se asigna la lista completa de carritos
         })
         .catch(err => console.log(err));
-}, [id]);
+  }, [id]);
 
 
   //para obtener los valores de los inputs
@@ -147,7 +147,7 @@ function CheckOut() {
             console.error(error);
             alert("Hubo un error al intentar comprar los artículos");
         });
-};
+  };
 
   
   return (
@@ -286,7 +286,7 @@ function CheckOut() {
                   </div>
                   </div>
                   <div class="modal-footer">
-                  <Link to ="/">
+                  <Link to ="/Agradecimiento">
                   <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" onClick={handleUpdate}>Pagar</button>
                   </Link>
                     
@@ -370,16 +370,10 @@ function CheckOut() {
 
           </div>
 
-
-
         </div>
-
 
       </div>
       
-
-
-
     </div>
   )
 }
