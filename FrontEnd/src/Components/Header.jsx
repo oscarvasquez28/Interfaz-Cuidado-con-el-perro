@@ -92,8 +92,8 @@ const Header = () => {
                  <Link to ="/"> <img src={perro} className="logo" alt="logo" /></Link>
             </div>
              <div className='header-right'>
-              {/* Expresión condicional para determinar qué mostrar en el Link */}
-                {username !== '' ? (
+              {/*Si es mayor a 0 significa que hay un usuario loggeado*/}
+                {userId > 1 ? (
                   <Link to="/profile" className='header-left-mayus'>{username}</Link>
                 ) : (
                   <Link to="/LogIn">INICIAR SESIÓN</Link>

@@ -8,7 +8,13 @@ import Footer from '../Components/Footer';
 import UserContext from '../Context/UserContext'; // Importa el contexto
 
 function SignIn() {
+  // const [carritos, setCarritos] = useState([]);
+
   const { setUser } = useContext(UserContext); // Cambia setUsername a setUser
+  const { userData } = useContext(UserContext); // Cambia username a userData
+  const userId = userData.id; // Obtén el ID del contexto de usuario
+  const username = userData.username;
+  
   const [showPass, setShowPass] = useState(false);
   const [values, setValues] = useState({
     correo: '',
@@ -32,11 +38,13 @@ function SignIn() {
         if (res.data.length > 0) {
           // Si se encontró al usuario, redirigir al dashboard u otra página
           console.log(res.data[0].nombre);
-          const userId = res.data[0].id; // Añadir la obtención del ID
-          const username = res.data[0].nombre;
-          setUser(userId, username); // Establecer tanto el ID como el nombre de usuario
-          alert(`Bienvenido, ${username}!`);
+          const userId2 = res.data[0].id; // Añadir la obtención del ID
+          const username2 = res.data[0].nombre;
+          setUser(userId2, username2); // Establecer tanto el ID como el nombre de usuario
+          alert(`Bienvenido, ${username2}!`);
+          handleUpdate(userId2);
           navigate('/');
+          
         } else {
           // Si no se encontró al usuario, mostrar un mensaje de error o tomar otra acción
           console.log('Usuario no encontrado');
@@ -45,6 +53,24 @@ function SignIn() {
       })
       .catch(err => console.log(err));
   };
+
+
+  const handleUpdate = (userId) => {
+    // const { userData } = useContext(UserContext); // Cambia username a userData
+    // const userId3 = userData.id; // Obtén el ID del contexto de usuario
+    axios.post('http://localhost:8081/UpdateCarritoId', { id: userId })
+        .then(response => {
+            console.log(response);
+            alert("Los artículos fueron comprados");
+            alert(userId);
+            // Realiza alguna acción adicional si es necesario
+        })
+        .catch(error => {
+            console.error(error);
+            alert("Hubo un error al intentar comprar los artículos");
+        });
+  };
+
 
   return (
     <div>
