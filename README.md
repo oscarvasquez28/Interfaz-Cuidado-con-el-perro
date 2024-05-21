@@ -10,7 +10,9 @@ Mejora en la interfaz de la página "Cuidado con el Perro", cumpliendo el princi
 - [@oscarvasquez28](https://github.com/oscarvasquez28)
 
 
+## Contributors
 
+- [@IsisFlores82](https://github.com/IsisFlores82)
 
 
 ## Contributing
