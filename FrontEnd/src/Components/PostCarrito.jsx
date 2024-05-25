@@ -49,11 +49,11 @@ const PostCarrito = (props) => {
         </div>
 
         <div className="pc-btn-inline-left ">
-          <Selector />
+          {/* <Selector /> */}
           {/* Renderiza el componente Talla si la talla está definida */}
 
             {/* Aquí envuelve el ícono de borrar dentro de un Link */}
-            <i className="bi bi-trash pc-iconoTrash" type="button" onClick={handleDelete}></i>
+            {/* <i className="bi bi-trash pc-iconoTrash" type="button" onClick={handleDelete}></i> */}
 
         </div>
       </div>
