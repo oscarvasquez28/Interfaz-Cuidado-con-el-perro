@@ -91,24 +91,24 @@ function LogIn(){
           <form onSubmit={handleSubmit}>
             <div className='names'>
 
-              <input type="text" className='email-subscribe-li' placeholder='Nombre' onChange={e => setValues({...values, nombre: e.target.value})}/>
+              <input type="text" className='email-subscribe-li' placeholder='Nombre' onChange={e => setValues({...values, nombre: e.target.value})} required/>
 
-              <input type="text" className='email-subscribe-li' placeholder='Apellido' onChange={e => setValues({...values, apellido: e.target.value})} />
+              <input type="text" className='email-subscribe-li' placeholder='Apellido' onChange={e => setValues({...values, apellido: e.target.value})} required/>
 
             </div>
 
             <div>
-              <input type="text" className='eemail-subscribe-li' placeholder='Email' onChange={e => setValues({...values, correo: e.target.value})}/>        
+              <input type="text" className='eemail-subscribe-li' placeholder='Email' onChange={e => setValues({...values, correo: e.target.value})} required/>        
             </div>
             
             <div className='pass-inputs'>        
               
               <div className='pass-input input-container'>
                 <input type={ showPass ? "text" : "password"} className='email-subscribe-li' placeholder='Contraseña' 
-                minLength="8" maxLength="20" onChange={e => setValues({...values, contraseña: e.target.value})}/>
+                minLength="8" maxLength="20" onChange={e => setValues({...values, contraseña: e.target.value})} required/>
                   
-                <div className='pass-icon-li' onClick={() => setShowPass(!showPass)}>
-                  {showPass ? <i className="bi bi-eye"></i> : <i className="bi bi-eye-slash"></i>}
+                <div className='pass-icon-li' onClick={() => setShowPass(!showPass)} required>
+                  {showPass ? <i className="bi bi-eye"></i> : <i className="bi bi-eye-slash"></i>} 
                 </div>
 
               </div>   
@@ -140,7 +140,7 @@ function LogIn(){
             </div>
 
             <div>
-              <p className='links'>Al presionar “Crear cuenta” acepto el <u>Aviso de Privacidad</u> y <u>Cookies</u> </p>
+              <p className='links'>Al presionar “Crear cuenta” acepto el <u id='link-pointer'>Aviso de Privacidad</u> y <u id='link-pointer'>Cookies</u> </p>
             </div>
 
             <div>
