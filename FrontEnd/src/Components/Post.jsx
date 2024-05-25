@@ -75,7 +75,7 @@ const Post = (props) => {
             alert("Selecciona una talla");
             }else{
                 if(userId == 1){
-                    alert("Eres el cliente 1");
+                    // alert("Eres el cliente 1");
                     axios.post('http://localhost:8081/carrito' , values)
                     .then(res => {
                         console.log(res);
