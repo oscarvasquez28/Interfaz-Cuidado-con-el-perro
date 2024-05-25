@@ -1,11 +1,13 @@
 import express from 'express';
-import mysql from 'mysql'
+import mysql, { format } from 'mysql'
 import cors from 'cors'
+import nodemailer from 'nodemailer';
 
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -105,6 +107,35 @@ app.post('/Log', (req, res) => {
     });
 });
 
+app.post("/send-email", (req, res) => {
+    var transporter = nodemailer.createTransport({
+        host: "smtp.ethereal.email",
+        post: 587,
+        secure: false,
+        auth: {
+            user: "ned50@ethereal.email",
+            pass: "	K6GwNcq17cscJhsAn3"
+        }
+    })
+
+    var mailOptions = {
+        form: "Remitente",
+        to: "oscarfvs5300@gmai.com",
+        subject: "Enviado desde nodemailer",
+        text: "!Hola Mundo!"
+    }
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if(error) {
+            res.status(500).send(error.message);
+        }else{
+            console.log("Email enviado.")
+            res.status(200).jsonp(req.body);
+        }
+    })
+    console.log("Email enviado");
+})
+
 app.get('/LeerCarrito/:id', (req, res) => {
     const sql = "SELECT * FROM carrito WHERE usuario_id = ? ";
     const id = req.params.id;
@@ -113,6 +144,16 @@ app.get('/LeerCarrito/:id', (req, res) => {
         return res.json(result);
     })
 })
+
+app.get('/LeerProducto', (req, res) => {
+    const sql = "SELECT * FROM producto"; // Corregí el nombre de la tabla a 'producto'
+    db.query(sql, (err, result) => {
+        if (err) return res.json({ message: "Error inside server" });
+        return res.json(result);
+    });
+});
+
+
 
 app.get('/LeerCheckOut/:id', (req, res) => {
     const sql = "SELECT * FROM carrito WHERE usuario_id = ?";
@@ -143,6 +184,14 @@ app.delete('/delete', (req, res) => {
         }
         // Si la eliminación se realizó con éxito, envía una respuesta de éxito
         return res.status(200).json({ message: 'Artículo eliminado del carrito con éxito' });
+    });
+});
+
+app.delete('/deleteCarrito', (req, res) => {
+    const sql = "DELETE FROM carrito WHERE comprado = 'si'"; // Corregí el nombre de la tabla a 'producto'
+    db.query(sql, (err, result) => {
+        if (err) return res.json({ message: "Error inside server" });
+        return res.json(result);
     });
 });
 
