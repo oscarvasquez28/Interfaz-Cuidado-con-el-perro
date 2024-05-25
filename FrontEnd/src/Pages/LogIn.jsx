@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './SignIn.css';
@@ -20,6 +20,14 @@ function SignIn() {
     correo: '',
     contraseña: ''
   });
+
+  const [formComplete, setFormComplete] = useState(false); // Estado para rastrear si los campos están completos
+
+  useEffect(() => {
+    // Verifica si todos los campos están llenos
+    const isFormComplete = Object.values(values).every(value => value !== '');
+    setFormComplete(isFormComplete);
+  }, [values]);
 
   // Manejar cambios en los campos del formulario
   const handleChange = (event) => {
@@ -61,13 +69,13 @@ function SignIn() {
     axios.post('http://localhost:8081/UpdateCarritoId', { id: userId })
         .then(response => {
             console.log(response);
-            alert("Los artículos fueron comprados");
-            alert(userId);
+            // alert("Los artículos fueron comprados");
+            // alert(userId);
             // Realiza alguna acción adicional si es necesario
         })
         .catch(error => {
             console.error(error);
-            alert("Hubo un error al intentar comprar los artículos");
+            alert("Hubo un error al intentar añadir los artículos a su carrito");
         });
   };
 
@@ -83,27 +91,27 @@ function SignIn() {
             <div className='general'>
               <div className='general-title'>
                 <h2 className='right-side-subtitle'>
-                  ENTRA EN TU CUENTA
+                  ENTRAR EN TU CUENTA
                 </h2>            
               </div>
               <form onSubmit={handleSubmit}>
                 <div>
-                  <input type="text" className='email-subscribe-si' placeholder='Email' name="correo" value={values.correo} onChange={handleChange}/>
+                  <input type="text" className='email-subscribe-si' placeholder='Email' name="correo" value={values.correo} onChange={handleChange} required/>
                 </div>
                 <div className=''>        
                   <div className='pass-input'>
-                    <input type={showPass ? "text" : "password"} className='email-subscribe-si' placeholder='Contraseña' name="contraseña" value={values.contraseña} onChange={handleChange}/>
+                    <input type={showPass ? "text" : "password"} className='email-subscribe-si' placeholder='Contraseña' name="contraseña" value={values.contraseña} onChange={handleChange} required/>
                     <div className='pass-icon' onClick={() => setShowPass(!showPass)}>
                       {showPass ? <i className="bi bi-eye"></i> : <i className="bi bi-eye-slash"></i>}
                     </div>
                   </div>   
                 </div>  
                 <div>
-                  <button className="btn-unirse-si" type='submit'>INICIAR SESIÓN</button>
+                <button className={`btn-unirse ${formComplete ? 'btn-unirse-si' : 'btn-unirse-no'}`} type='submit' disabled={!formComplete}>INICIAR SESIÓN</button>
                 </div> 
               </form>                
               <div>
-                <p className='or-reset-pass'>¿OLVIDASTE TU CONTRASEÑA?</p>
+                <p className='or-reset-pass'>RECUPERAR CONTRASEÑA</p>
               </div>         
             </div>        
           </div>
@@ -118,7 +126,7 @@ function SignIn() {
           </div>
         </div>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }
