@@ -127,9 +127,9 @@ function LogIn(){
             <div className=''>
               {/* <p> */}
                 <ul className='pass-char'>
-                  <li>Combina mayúsculas con minúsculas</li>
-                  <li>Ingresa de 8 a 20 caracteres. </li>
-                  <li>Agrega por lo menos un número o símbolo..</li>
+                  <li>Combinar mayúsculas con minúsculas</li>
+                  <li>Ingresar de 8 a 20 caracteres. </li>
+                  <li>Agregar por lo menos un número o símbolo..</li>
                 </ul>           
               {/* </p> */}
             </div>

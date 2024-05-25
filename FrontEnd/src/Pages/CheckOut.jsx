@@ -202,7 +202,7 @@ function CheckOut() {
         <div className='co-Left'>
 
           <div>
-          <h3> <b>DATOS</b>    &#10097;   ENVÍO    &#10097;   PAGO  </h3>
+          <h3> <b>DATOS</b>  &#10097;   PAGO  </h3>
           </div>
           <br /> <br />
 
