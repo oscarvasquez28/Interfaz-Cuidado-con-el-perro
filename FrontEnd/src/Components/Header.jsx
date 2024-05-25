@@ -1,13 +1,20 @@
 // import React from 'react'
 import React, { useState, useEffect, useContext } from 'react';
+
 // import { Link, useLocation } from 'react-router-dom';
 import '../Components/Header.css'
 import { Link } from 'react-router-dom'
+
+// import introJs from 'intro.js';
+// import 'intro.js/introjs.css';
+
 import perro from '../Images/perro.png'
 import UserContext from '../Context/UserContext'; // Importa el contexto
 import HombreMenu from './HombreMenu';
 import MujerMenu from './MujerMenu';
 import KidsMenu from './KidsMenu';
+
+
 
 const Header = () => {
   const { userData } = useContext(UserContext); // Cambia username a userData
@@ -54,7 +61,8 @@ const Header = () => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               >
-              <div className='alturaa' onMouseEnter={() => {
+              <div className='alturaa' id='mujer-navbar'
+                onMouseEnter={() => {
                 setMostrarMenu1(true);
                 setMostrarMenuMujer(false);
                 }}
@@ -64,7 +72,8 @@ const Header = () => {
                 }}>
                 <Link to ="/Mujer">MUJER</Link>
               </div>
-              <div className='alturaa' onMouseEnter={() => {
+              <div className='alturaa' id='hombre-navbar'
+                onMouseEnter={() => {
                 setMostrarMenu2(true);
                 setMostrarMenuHombre(false);
                 }}
@@ -74,7 +83,8 @@ const Header = () => {
                 }}>     
                   <Link to ="/Hombre">HOMBRE</Link>
               </div>
-              <div className='alturaa'onMouseEnter={() => {
+              <div className='alturaa' id='ninos-navbar'
+                onMouseEnter={() => {
                 setMostrarMenu3(true);
                 setMostrarMenuKids(false);
                 }}
@@ -84,8 +94,8 @@ const Header = () => {
                 }}>
                 <Link to ="/Kids">NIÑOS</Link>
               </div>
-              <div className='alturaa'>
-                <Link to ="/"><i className="bi bi-search"></i>BUSCAR</Link>
+              <div className='alturaa' id='Buscar-navbar'>
+                <Link to ="/Search"><i className="bi bi-search"></i>BUSCAR</Link>
               </div>       
             </div>
              <div className='header-center'>
@@ -94,12 +104,12 @@ const Header = () => {
              <div className='header-right'>
               {/*Si es mayor a 0 significa que hay un usuario loggeado*/}
                 {userId > 1 ? (
-                  <Link to="/profile" className='header-left-mayus'>{username}</Link>
+                  <Link to="/profile" className='header-left-mayus' >{username}</Link>
                 ) : (
-                  <Link to="/LogIn">INICIAR SESIÓN</Link>
+                  <Link to="/LogIn" id='LogIn-navbar'>INICIAR SESIÓN</Link>
                 )}
-                 <Link to ="/Favoritos">FAVORITOS</Link>
-                 <Link to={`/leerCarrito/${userId}`}>CARRITO</Link>
+                 <Link to ="/Favoritos" id='Favoritos-navbar'>FAVORITOS</Link>
+                 <Link to={`/leerCarrito/${userId}`} id='Carrito-navbar'>CARRITO</Link>
 
             </div>
          </nav>
