@@ -60,14 +60,14 @@ function Agradecimiento() {
                     <h5>DOMICILIO</h5>
                     </div>
                 </div>
-                <div className="row-container">
+                {/* <div className="row-container">
                     <div className="column-left">
                     <h4>DIRECCIÓN DE FACTURACIÓN</h4>
                     </div>
                     <div className="column-right">
                     <h5>Dirección con props</h5>
                     </div>
-                </div>
+                </div> */}
                 <div className="row-container">
                     <div className="column-left">
                     <h4>PAGADO CON</h4>
