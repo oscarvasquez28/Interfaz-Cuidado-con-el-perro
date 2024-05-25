@@ -83,7 +83,7 @@ function LogIn(){
 
           <div>
             <h2 className='right-side-subtitle-h2'>
-              CREA TU CUENTA
+              CREAR TU CUENTA
             </h2>
             <p>Ingresa tus datos para que seas parte de CCP</p>
           </div> 
