@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect,useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Link, useParams } from 'react-router-dom';
 
 import PostCheckOut from '../Components/PostCheckOut';
@@ -14,28 +15,11 @@ import '../Pages/CheckOut.css';
 
 function CheckOut() {
 
+  const location = useLocation();
+  const { totalparcial, totalfinal, CostoEnvio, cantidadProductos } = location.state || {};
+
   const { id } = useParams();
   const [carritos, setCarritos] = useState([]);
-  let totalparcial = 0;
-  let totalfinal = 0;
-  let CostoEnvio = 'Gratis';
-
-  for (let carrito of carritos) {
-    if (carrito.comprado === 'no') {
-      totalparcial += parseFloat(carrito.precio);
-    }
-  }
-
-  if(totalparcial >= 599){
-    CostoEnvio = 'Gratis';
-    totalfinal = totalparcial;
-  }else{
-    if(carritos.length>0)
-      {
-        CostoEnvio = '$65'
-        totalfinal = totalparcial + 65;
-      }
-  }
 
   useEffect(() => {
     axios.get(`http://localhost:8081/LeerCheckOut/${id}`)
@@ -46,6 +30,14 @@ function CheckOut() {
         .catch(err => console.log(err));
   }, [id]);
 
+  const handleDelete = () => {
+    axios
+      .delete(`http://localhost:8081/deleteCarrito`)
+      .then(response => {
+        // alert('La tabla de carrito fue borrada');
+      })
+      .catch(error => console.error(error));
+  };
 
   //para obtener los valores de los inputs
   const [Nombre, setNombre] = useState('');
@@ -140,13 +132,65 @@ function CheckOut() {
         .then(response => {
             console.log(response);
             alert("Los artículos fueron comprados");
-            alert(id);
+            // alert(id);
             // Realiza alguna acción adicional si es necesario
         })
         .catch(error => {
             console.error(error);
             alert("Hubo un error al intentar comprar los artículos");
         });
+  };
+
+  const HandleUpdateAndDelete = () => {
+    handleUpdate();
+    handleDelete();
+  };
+
+
+  const [cardNumber, setCardNumber] = useState('');
+  const [cardHolder, setCardHolder] = useState('');
+  const [expirationDate, setExpirationDate] = useState('');
+  const [cvv, setCvv] = useState('');
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    // Verificar si todos los campos están completos
+    if (cardNumber && cardHolder && expirationDate && cvv) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  }, [cardNumber, cardHolder, expirationDate, cvv]);
+
+  const handleCardNumberChange = (e) => {
+    const inputValue = e.target.value.replace(/\D/g, ''); // Remover caracteres que no sean dígitos
+    if (inputValue.length <= 16) {
+      setCardNumber(inputValue);
+    }
+  };
+
+  const handleCardHolderChange = (e) => {
+    setCardHolder(e.target.value.replace(/[^a-zA-Z\sÑñ]/g, ''));
+  };
+
+  const handleExpirationDateChange = (e) => {
+    setExpirationDate(e.target.value);
+  };
+
+  const handleCvvChange = (e) => {
+    const value = e.target.value.replace(/\D/g, ''); // Remover caracteres que no sean dígitos
+    if (value.length <= 3) {
+      setCvv(value);
+    }
+  };
+
+  const handlePayClick = () => {
+    if (!isFormValid) {
+      alert('Por favor complete todos los campos.');
+    } else {
+      // Aquí puedes manejar la lógica de pago y la navegación a la página de agradecimiento
+      console.log('Todos los campos están llenos, procesando pago...');
+    }
   };
 
   
@@ -230,66 +274,92 @@ function CheckOut() {
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" onClick={() => setActiveButton(null)}>Continuar</button>
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" onClick={() => setActiveButton(null)} disabled={activeButton === null}>Continuar</button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Datos de la tarjeta</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabIndex="-1">
+              <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="exampleModalToggleLabel2">Datos de la tarjeta</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body">
-                  <div className="rows-modals-pago">
-                    <div className="First-row-modal-pago">
-                      <div class="row">
-                        <div class="col">
-                          <input type="text" className="form-control" placeholder="Número de tarjeta de crédito" aria-label="Número de tarjeta de crédito"
-                          maxLength="16"
-                          pattern="\d*"
-                          title="Por favor ingrese solo números"
-                          onChange={(e) => {
-                            const inputValue = e.target.value.replace(/\D/g, ''); // Remover caracteres que no sean dígitos
-                            if (inputValue.length > 16) {
-                              e.target.value = inputValue.slice(0, 16); // Limitar la longitud a 16 dígitos
-                            } else {
-                              e.target.value = inputValue;
-                            }
-                          }}/>
+                  <div className="modal-body">
+                    <div className="rows-modals-pago">
+                      <div className="First-row-modal-pago">
+                        <div className="row">
+                          <div className="col">
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Número de tarjeta de crédito"
+                              aria-label="Número de tarjeta de crédito"
+                              maxLength="16"
+                              value={cardNumber}
+                              onChange={handleCardNumberChange}
+                            />
+                          </div>
+                          <div className="col">
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Titular de tarjeta"
+                              aria-label="Titular de tarjeta"
+                              value={cardHolder}
+                              onChange={handleCardHolderChange}
+                            />
+                          </div>
                         </div>
-                        <div class="col">
-                        <input type="text" className="form-control" placeholder="Titular de tarjeta" aria-label="Titular de tarjeta"
-                        onInput={(e) => {
-                          e.target.value = e.target.value.replace(/[^a-zA-Z\sÑñ]/g, '');
-                        }}/>
+                      </div>
+                      <div className="Second-row-modal-pago">
+                        <div className="row">
+                          <div className="col">
+                            <input
+                              type="month"
+                              className="form-control"
+                              placeholder="Expiración (MM/AA)"
+                              aria-label="Expiración (MM/AA)"
+                              value={expirationDate}
+                              onChange={handleExpirationDateChange}
+                            />
+                          </div>
+                          <div className="col">
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="CVV"
+                              aria-label="CVV"
+                              maxLength="3"
+                              value={cvv}
+                              onChange={handleCvvChange}
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="Second-row-modal-pago">
-                      <div class="row">
-                        <div class="col">
-                          <input type="month" class="form-control" placeholder="Expiración (MM/AA)" aria-label="Expiración (MM/AA)"/>
-                        </div>
-                        <div class="col">
-                        <input type="number" className="form-control" placeholder="CVV" aria-label="CVV"
-                          maxLength="3"
-                          onInput={(e) => {
-                            e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,3)
-                          }}/>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                  </div>
-                  <div class="modal-footer">
-                  <Link to ="/Agradecimiento">
-                  <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" onClick={handleUpdate}>Pagar</button>
-                  </Link>
-                    
+                  <div className="modal-footer">
+                    <Link to={isFormValid ? "/Agradecimiento" : "#"} onClick={(e) => {
+                      if (!isFormValid) {
+                        e.preventDefault();
+                        alert('Por favor complete todos los campos.');
+                      } else {
+                        handlePayClick();
+                      }
+                    }}>
+                      <button
+                        className="btn btn-primary"
+                        data-bs-target="#exampleModalToggle2"
+                        data-bs-toggle="modal"
+                        disabled={!isFormValid}
+                        onClick={HandleUpdateAndDelete}
+                      >
+                        Pagar
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -329,7 +399,7 @@ function CheckOut() {
           <div className='pedido'>
             <div className='rows-pedido'>
               <h3><b>PEDIDO</b></h3>
-              <p>{carritos.filter(carrito => carrito.comprado === 'no').length} productos</p>
+              <p>{cantidadProductos} productos</p>
             </div>
 
             <div>
@@ -349,10 +419,16 @@ function CheckOut() {
             }  
             </div>
 
-
+            {/* <div>
+      <h1>CheckOut</h1>
+      <p>Total parcial: ${totalparcial?.toFixed(2)}</p>
+      <p>Total final: ${totalfinal?.toFixed(2)}</p>
+      <p>Costo de Envío: {CostoEnvio}</p>
+      <p>Cantidad de Productos: {cantidadProductos}</p>
+    </div> */}
             <div  className='rows-pedido'>
               <p>Subtotal</p>
-              <p>${totalparcial.toFixed(2)}</p>
+              <p>${totalparcial?.toFixed(2)}</p>
             </div>
 
             <div  className='rows-pedido'>
@@ -365,7 +441,7 @@ function CheckOut() {
                 <p>Total</p>
               </div>
               
-              <p> <b>${totalfinal.toFixed(2)}</b> </p>
+              <p> <b>${totalfinal?.toFixed(2)}</b> </p>
             </div>
 
           </div>
