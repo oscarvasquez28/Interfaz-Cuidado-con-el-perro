@@ -21,6 +21,7 @@ import Favoritos from './Favoritos.jsx';
 import Carrito from './Carrito.jsx'
 import CheckOut from './CheckOut.jsx';
 import Agradecimiento from './Agradecimiento.jsx';
+import Search from './Search.jsx';
 
 
 import { UserProvider } from '../Context/UserContext.jsx';
@@ -40,6 +41,7 @@ function App() {
           <Route path='/Mujer' element={<Mujer />} />
           <Route path='/Hombre' element={<Hombre />} />
           <Route path='/Kids' element={<Kids />} />
+          <Route path='/Search' element={<Search />} />
           <Route path='/Favoritos' element={<Favoritos />} />
           <Route path='/Profile' element={<Profile />} />
           <Route path='/Agradecimiento' element={<Agradecimiento />} />
