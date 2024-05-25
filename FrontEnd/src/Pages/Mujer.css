@@ -21,21 +21,22 @@
 }
 .Mujer-Container-Dashboard-Posts{
     display: grid; /* Utilizar grid para los posts */
-    grid-template-columns: repeat(auto-fill, minmax(40vh, 1fr)); /* Columnas con ancho mínimo y máximo */
+    grid-template-columns: repeat(auto-fill, minmax(50vh, 1fr)); /* Columnas con ancho mínimo y máximo */
+
     grid-gap: 10px; /* Espacio entre los posts */
     margin: 10px 30px;
 }
 
 .ArreglarBootstrap-Container {
     display: grid; /* Utilizar grid para los posts */
-    grid-template-columns: repeat(auto-fill, minmax(40vh, 1fr)); /* Columnas con ancho mínimo y máximo */
+    grid-template-columns: repeat(auto-fill, minmax(50vh, 1fr)); /* Columnas con ancho mínimo y máximo */
     grid-gap: 10px; /* Espacio entre los posts */
     margin: 0px 30px;
   }
   
   .ArreglarBootstrap{
     display: grid; /* Utilizar grid para los posts */
-    grid-template-columns: repeat(auto-fill, minmax(40vh, 1fr)); /* Columnas con ancho mínimo y máximo */
+    grid-template-columns: repeat(auto-fill, minmax(50vh, 1fr)); /* Columnas con ancho mínimo y máximo */
     grid-gap: 10px; /* Espacio entre los posts */
   }
 
@@ -52,12 +53,19 @@
     border: 1px solid white;
     padding: 10px 20px;
     font-weight: bold;
+    transition: ease-in-out 0.2s;
 }
+
+.Dashboard-button:hover{
+    background: rgb(66, 66, 66, 1);
+}
+
 
 .Dashboard-button-center{
     text-align: center;
-    padding: 20px;
-    /* margin: 0px; */
+    padding: 20px 20px 30px 20px;
+    margin: 0px;
+    /*para quitar espacio entre contenedores*/
 }
 
 .Dashboard-button-hide{
@@ -74,10 +82,93 @@
     font-size: 50px;
 }
 
+.Container-postdashboard{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 20px;
+}
+
+.Second-Dashboard{
+    background: rgb(211, 211, 211, 0.4);
+}
+
+.Second-Dashboard-title{
+    padding-top: 30px;
+    text-align: center;
+}
+
+.container-Second-Dashboard{
+    display: flex;
+    padding: 10px 30px 20px;
+
+}
+
+.container-Second-Dashboard .row{
+    margin-top: 0px;
   
+    /* background: rgb(211, 211, 211); */
+}
+
+.container-Second-Dashboard .row div{
+    margin: 10px 0;
+    /* border: none; */
+}
+
+.container-Second-Dashboard-img{
+    transition: ease-in-out 0.2s;
+    cursor: pointer;
+ 
+}
   
+.container-Second-Dashboard-img:hover{
+    transform: scale(1.04);
+}
   
-  
-  
-  
-  
+.card-title{
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    display: inline;
+    -webkit-text-stroke: 0.7px black;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0px 5px;
+    
+}
+
+.card-img-kids {
+
+    height: 60vh;
+}
+
+#row-ninos{
+    width: 100%;
+}
+
+.card-img-overlay-div{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
+
+.Second-Dashboard-button{
+
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: ease-in-out 0.2s;
+}
+
+/* .Second-Dashboard-button:hover{
+    background: rgb(66, 66, 66, 0.2);
+} */
+@media screen and (max-width: 830px) {
+    .card-img-kids {
+
+        height: auto;
+    }
+}
