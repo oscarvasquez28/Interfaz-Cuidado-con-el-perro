@@ -85,7 +85,7 @@ function LogIn(){
             <h2 className='right-side-subtitle-h2'>
               CREAR TU CUENTA
             </h2>
-            <p>Ingresa tus datos para que seas parte de CCP</p>
+            <p>Ingresar datos para ser parte de CCP</p>
           </div> 
 
           <form onSubmit={handleSubmit}>
@@ -151,7 +151,7 @@ function LogIn(){
           
 
           <div>
-            <p className='or-signin'>¿YA TIENES UNA CUENTA? INICIA SESIÓN</p>
+            <p className='or-signin'>¿YA TIENES UNA CUENTA? INICIAR SESIÓN</p>
           </div>
 
         </div>
