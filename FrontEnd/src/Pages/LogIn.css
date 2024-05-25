@@ -140,15 +140,28 @@
   font-size: 12px;
   margin-top: 20px;
   font-weight: bold;
+  cursor: pointer;
+}
+
+#link-pointer{
+  cursor: pointer;
 }
 
 .btn-unirse-si{
   transition: 0.2s ease-in-out;
+  background: black;
+  color: white;
+}
+
+.btn-unirse-no{
+  transition: 0.2s ease-in-out;
+  padding: 15px 10%;
+  margin: 5px;
+  width: 90%;
 }
 
 .btn-unirse-si:hover{
-  background: black;
-  color: white;
+  background: rgb(60, 60, 60);
 }
 
 
