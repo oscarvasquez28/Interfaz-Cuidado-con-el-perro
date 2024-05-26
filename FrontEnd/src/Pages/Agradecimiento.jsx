@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Header from '../Components/Header'
 import UserContext from '../Context/UserContext'; // Importa el contexto
 import QR from '../Images/qr.png'
+import QR2 from '../Images/QR2.jpg'
 
 import '../Pages/Agradecimiento.css'
 function Agradecimiento() {
@@ -108,7 +109,7 @@ function Agradecimiento() {
                     </div>
                 </div>
                 <div className="row-container" id='row-container-bordernone'>
-                    <img src={QR} className='container-qr' />
+                    <img src={QR2} className='container-qr' />
                 </div>
             </div>   
         </div>
