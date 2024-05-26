@@ -142,7 +142,7 @@ function Carrito() {
               <p>${totalparcial.toFixed(2)}</p>
             </div>
             <div className='rows-resumen'>
-              <p>Estimado de envio</p>
+              <p>Estimado de envío</p>
               <p>{CostoEnvio}</p>
             </div>
             <div className='rows-resumen total'>
@@ -183,7 +183,7 @@ function Carrito() {
             </button>
           </div>
           <DropDown
-            title='ENVIO '
+            title='ENVíO '
             texto1='ENVÍO GRATIS A DOMICILIO EN PEDIDOS SUPERIORES A 599 MXN'
             texto2='Entrega en 1-10 hábiles. Si no llegas al pedido mínimo, ¡no te preocupes! son solo 65 MXN'
             texto3='Y TU ENVÍO A TIENDA, SIEMPRE GRATUITO '

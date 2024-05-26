@@ -41,7 +41,7 @@ const Carousel = props => (
                     <img src={Cuidado3} className="d-block w-100" style={{ maxHeight: "82vh" }} alt="banner 3"/>
                     <div className="carousel-caption d-none d-md-block">
                         <div className="Carousel-link">
-                        <Link to ="/Kids"><h5>KIDS</h5></Link>
+                        <Link to ="/Kids"><h5>NIÑOS</h5></Link>
                         {/* <p>Some representative placeholder content for the third slide.</p> */}
                         </div>
                     </div>

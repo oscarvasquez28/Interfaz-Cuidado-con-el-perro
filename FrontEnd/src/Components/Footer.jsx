@@ -8,7 +8,7 @@ function Footer(){
         <div className='All-cards-footer'>
             <div className='contenedor-footer'>
                 <h3 className='contenedor-footer-title'>NOSOTROS</h3>
-                <p className='links'>Quienes somos</p>
+                <p className='links'>Quiénes somos</p>
                 <p className='links'>Tiendas</p>
                 <p className='links'>Política de medioambiente</p>
                 <p className='links'>Responsabilidad social</p>
